@@ -59,7 +59,7 @@ function M.setup(palette)
 		PmenuSbar                                  = { bg = c.bg_menuselbar },                                     -- bg = c.grey -- Popup/WildMenu: scrollbar.
 		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                             -- Popup/WildMenu: selected item.
 		PmenuThumb                                 = { fg = c.blackp1, bg = c.purplem1 },                          -- Popup/WildMenu: Thumb of the scrollbar.
-		Question                                   = { fg = c.purplem2 },                                           -- |hit-enter| prompt and yes/no questions
+		Question                                   = { fg = c.purplem2 },                                          -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },        -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
@@ -81,7 +81,7 @@ function M.setup(palette)
 		VertSplit                                  = { fg = c.border },                                            -- the column separating vertically split windows
 		Visual                                     = { bg = c.bg_visual },                                         -- Visual mode selection
 		-- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-		WarningMsg                                 = { fg = c.redp2 },                                               -- warning messages
+		WarningMsg                                 = { fg = c.pinkp1 },                                            -- warning messages
 		Whitespace                                 = { fg = c.blackp2 },                                           -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- TODO: FIX WildMenu
 		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                       -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
@@ -103,29 +103,29 @@ function M.setup(palette)
 		Constant                                   = { fg = c.orangep2 },                              -- (preferred) any constant
 		Debug                                      = { fg = c.bluep2 },                                -- debugging statements
 		Define                                     = { fg = c.purplem1 },                              -- preprocessor #define
-		Delimiter                                  = { fg = c.redp2 },                                 -- character that needs attention
+		Delimiter                                  = { fg = c.whitem1 },                               -- character that needs attention
 		Error                                      = { fg = c.whitem1, bg = c.redm2 },                 -- (preferred) any erroneous construct
 		Exception                                  = { fg = c.orangem2 },                              --  try, catch, throw
-		Float                                      = { fg = c.gradient2 },                             -- a floating point constant: 2.3e10
-		Function                                   = { fg = c.bluem2, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+		Float                                      = { fg = c.orangem2 },                              -- a floating point constant: 2.3e10
+		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
 		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
 		Include                                    = { fg = c.pinkm2 },                                -- preprocessor #include
 		Keyword                                    = { fg = c.greenm2, style = options.hl_styles.keywords }, -- any other keyword
-		Label                                      = { fg = c.yellowp2 },                              -- case, default, etc.
+		Label                                      = { fg = c.green },                              -- case, default, etc.
 		Macro                                      = { fg = c.orangem2 },                              -- same as Define
-		Number                                     = { fg = c.gradient2 },                             --   a number constant: 234, 0xff
+		Number                                     = { fg = c.orangem2 },                              --   a number constant: 234, 0xff
 		Operator                                   = { fg = c.redp2 },                                 -- "sizeof", "+", "*", etc.
 		PreCondit                                  = { fg = c.blue },                                  -- preprocessor #if, #else, #endif, etc.
 		PreProc                                    = { fg = c.blue },                                  -- (preferred) generic Preprocessor
-		Repeat                                     = { fg = c.pinkm2 },                                -- for, do, while, etc.
+		Repeat                                     = { fg = c.purple },                                -- for, do, while, etc.
 		Special                                    = { fg = c.purple },                                -- (preferred) any special symbol
 		-- SpecialChar = { }, --  special character in a constant
 		-- SpecialComment = { }, -- special things inside a comment
 		Statement                                  = { fg = c.orange },           -- (preferred) any statement
 		StorageClass                               = { fg = c.yellow, italic = true }, -- static, register, volatile, etc.
-		String                                     = { fg = c.yellow },            --   a string constant: "this is a string"
-		Structure                                  = { fg = c.blue },             -- struct, union, enum, etc.
+		String                                     = { fg = c.purplem1 },         --   a string pinkp1ant: "this is a string"
+		Structure                                  = { fg = c.bluem2 },             -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },             -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pinkm2 }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Type                                       = { fg = c.purplem2 },         -- (preferred) int, long, char, etc.
@@ -202,8 +202,8 @@ function M.setup(palette)
 		["@preproc"]                               = { fg = c.blue, italic = true },
 
 		--- Punctuation
-		["@punctuation.delimiter"]                 = { fg = c.whitep1 }, -- For delimiters ie: `.`
-		["@punctuation.bracket"]                   = { fg = c.whitem1 }, -- For brackets and parens.
+		["@punctuation.delimiter"]                 = { link = "Delimiter" }, -- For delimiters ie: `.`
+		["@punctuation.bracket"]                   = { fg = c.pinkm2 },  -- For brackets and parens.
 		-- ["@punctuation.special"] = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
 
 		--- Literals
@@ -213,7 +213,7 @@ function M.setup(palette)
 
 		--- Functions
 		["@constructor"]                           = { fg = c.purplem2, italic = true },
-		["@parameter"]                             = { fg = c.purple, italic = true }, -- For parameters of a function
+		["@parameter"]                             = { fg = c.whitem2, italic = true }, -- For parameters of a function
 		["@function.builtin"]                      = { fg = c.green },
 		-- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
 
@@ -339,7 +339,7 @@ function M.setup(palette)
 
 		--- Dashboard
 		-- General
-		DashboardHeader                            = { fg = c.purplem2 },
+		DashboardHeader                            = { fg = c.purple },
 		DashboardFooter                            = { fg = c.whitem1, italic = true },
 		-- Hyper theme
 		DashboardFiles                             = { fg = c.fg },
