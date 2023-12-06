@@ -23,9 +23,9 @@ function M.setup(palette)
 		Comment                                    = { fg = c.comment, style = options.hl_styles.comments }, -- any comment
 		Conceal                                    = {},                                               -- ??
 		CurSearch                                  = { link = 'IncSearch' },                           -- current search match
-		Cursor                                     = { fg = c.bg, bg = c.whitem1 },                    -- character under the cursor
+		Cursor                                     = { fg = c.bg, bg = c.white },                    -- character under the cursor
 		CursorColumn                               = { bg = c.bg_highlight },                          -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorIM                                   = { fg = c.bg, bg = c.whitem1 },                    -- like Cursor, but used when in IME mode |CursorIM|
+		CursorIM                                   = { fg = c.bg, bg = c.white },                    -- like Cursor, but used when in IME mode |CursorIM|
 		CursorLine                                 = { bg = c.bg_highlight },                          -- Screen-line at the cursor, when 'cursorline' is set.
 		CursorLineNr                               = { fg = c.red },                                   -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		DiffAdd                                    = { fg = c.bg_dark, bg = c.diff.add },              -- diff mode: Added line |diff.txt|
@@ -39,15 +39,15 @@ function M.setup(palette)
 		Folded                                     = { fg = c.comment, bg = c.bg_sidebar, italic = true }, -- line used for closed folds
 		FoldColumn                                 = { fg = c.comment, bg = c.bg_float },              -- 'foldcolumn'
 
-		RedrawDebugClear                           = { fg = c.bg_dar, bg = c.yellowp2 },               -- debug: breakpoints
-		RedrawDebugComposed                        = { fg = c.bg_dar, bg = c.greenm2 },
+		RedrawDebugClear                           = { fg = c.bg_dar, bg = c.yellow },               -- debug: breakpoints
+		RedrawDebugComposed                        = { fg = c.bg_dar, bg = c.green },
 
-		IncSearch                                  = { fg = c.fg_search, bg = c.purplem2, bold = true },           -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },           -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr                                     = { fg = c.fg_gutter },                                         -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		LineNrBe                                   = { fg = c.purple },
-		MatchParen                                 = { fg = c.yellowm2, bold = true, underline = true },           -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg                                    = { fg = c.whitem1, bold = true },                              -- 'showmode' message (e.g., "-- INSERT -- ")
-		MoreMsg                                    = { fg = c.pinkm2 },                                            -- |more-prompt|
+		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },           -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg                                    = { fg = c.white, bold = true },                              -- 'showmode' message (e.g., "-- INSERT -- ")
+		MoreMsg                                    = { fg = c.pink },                                            -- |more-prompt|
 		MsgArea                                    = { fg = c.fg },                                                -- Area for messages and cmdline
 		MsgSeparator                               = { sp = c.border, underline = true },                          -- Separator for scrolled messages, `msgsep` flag of 'display'
 		NonText                                    = { fg = c.blackp2 },                                           -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -58,13 +58,13 @@ function M.setup(palette)
 		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                               -- Popup/wildMenu: normal item.
 		PmenuSbar                                  = { bg = c.bg_menuselbar },                                     -- bg = c.grey -- Popup/WildMenu: scrollbar.
 		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                             -- Popup/WildMenu: selected item.
-		PmenuThumb                                 = { fg = c.blackp1, bg = c.purplem1 },                          -- Popup/WildMenu: Thumb of the scrollbar.
-		Question                                   = { fg = c.purplem2 },                                          -- |hit-enter| prompt and yes/no questions
+		PmenuThumb                                 = { fg = c.blackp1, bg = c.purple },                          -- Popup/WildMenu: Thumb of the scrollbar.
+		Question                                   = { fg = c.purple },                                          -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },        -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
 		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                      -- column where |signs| are displayed
-		SpecialKey                                 = { fg = c.bluep2 },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey                                 = { fg = c.blue },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad                                   = { sp = c.error, undercurl = true },                           -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap                                   = { sp = c.warning, undercurl = true },                         -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                                 = { sp = c.info, undercurl = true },                            -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -81,7 +81,7 @@ function M.setup(palette)
 		VertSplit                                  = { fg = c.border },                                            -- the column separating vertically split windows
 		Visual                                     = { bg = c.bg_visual },                                         -- Visual mode selection
 		-- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-		WarningMsg                                 = { fg = c.pinkp1 },                                            -- warning messages
+		WarningMsg                                 = { fg = c.pink },                                            -- warning messages
 		Whitespace                                 = { fg = c.blackp2 },                                           -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- TODO: FIX WildMenu
 		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                       -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
@@ -99,23 +99,23 @@ function M.setup(palette)
 
 		Boolean                                    = { fg = c.green },                                 -- a boolean constant: TRUE, false
 		Character                                  = { fg = c.orange },                                --  a character constant: 'c', '\n'
-		Conditional                                = { fg = c.pinkm2 },                                -- if, then, else, endif, switch, etc.
-		Constant                                   = { fg = c.orangep2 },                              -- (preferred) any constant
-		Debug                                      = { fg = c.bluep2 },                                -- debugging statements
-		Define                                     = { fg = c.purplem1 },                              -- preprocessor #define
-		Delimiter                                  = { fg = c.whitem1 },                               -- character that needs attention
-		Error                                      = { fg = c.whitem1, bg = c.redm2 },                 -- (preferred) any erroneous construct
-		Exception                                  = { fg = c.orangem2 },                              --  try, catch, throw
-		Float                                      = { fg = c.orangem2 },                              -- a floating point constant: 2.3e10
+		Conditional                                = { fg = c.pink },                                -- if, then, else, endif, switch, etc.
+		Constant                                   = { fg = c.orange },                              -- (preferred) any constant
+		Debug                                      = { fg = c.blue },                                -- debugging statements
+		Define                                     = { fg = c.purple },                              -- preprocessor #define
+		Delimiter                                  = { fg = c.white },                               -- character that needs attention
+		Error                                      = { fg = c.white, bg = c.red },                 -- (preferred) any erroneous construct
+		Exception                                  = { fg = c.orange },                              --  try, catch, throw
+		Float                                      = { fg = c.orange },                              -- a floating point constant: 2.3e10
 		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
 		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
-		Include                                    = { fg = c.pinkm2 },                                -- preprocessor #include
-		Keyword                                    = { fg = c.greenm2, style = options.hl_styles.keywords }, -- any other keyword
+		Include                                    = { fg = c.pink },                                -- preprocessor #include
+		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords }, -- any other keyword
 		Label                                      = { fg = c.green },                              -- case, default, etc.
-		Macro                                      = { fg = c.orangem2 },                              -- same as Define
-		Number                                     = { fg = c.orangem2 },                              --   a number constant: 234, 0xff
-		Operator                                   = { fg = c.redp2 },                                 -- "sizeof", "+", "*", etc.
+		Macro                                      = { fg = c.orange },                              -- same as Define
+		Number                                     = { fg = c.orange },                              --   a number constant: 234, 0xff
+		Operator                                   = { fg = c.red },                                 -- "sizeof", "+", "*", etc.
 		PreCondit                                  = { fg = c.blue },                                  -- preprocessor #if, #else, #endif, etc.
 		PreProc                                    = { fg = c.blue },                                  -- (preferred) generic Preprocessor
 		Repeat                                     = { fg = c.purple },                                -- for, do, while, etc.
@@ -124,11 +124,11 @@ function M.setup(palette)
 		-- SpecialComment = { }, -- special things inside a comment
 		Statement                                  = { fg = c.orange },           -- (preferred) any statement
 		StorageClass                               = { fg = c.yellow, italic = true }, -- static, register, volatile, etc.
-		String                                     = { fg = c.purplem1 },         --   a string pinkp1ant: "this is a string"
-		Structure                                  = { fg = c.bluem2 },             -- struct, union, enum, etc.
+		String                                     = { fg = c.purple },         --   a string pinkant: "this is a string"
+		Structure                                  = { fg = c.blue },             -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },             -- you can use CTRL-] on this
-		Todo                                       = { fg = c.bg_dark, bg = c.pinkm2 }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purplem2 },         -- (preferred) int, long, char, etc.
+		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Type                                       = { fg = c.purple },         -- (preferred) int, long, char, etc.
 		Typedef                                    = { fg = c.blue },             -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.blackp2 },
@@ -184,7 +184,7 @@ function M.setup(palette)
 		LspInfoBorder                              = { fg = c.border_highlight, bg = c.bg_float },
 
 		-- checkhealt
-		helpCommand                                = { fg = c.purplep2, bg = c.bg_float }, -- command name/description
+		helpCommand                                = { fg = c.purple, bg = c.bg_float }, -- command name/description
 		healthError                                = { fg = c.error },
 		healthSuccess                              = { fg = c.green },
 		healthWarning                              = { fg = c.warning },
@@ -203,7 +203,7 @@ function M.setup(palette)
 
 		--- Punctuation
 		["@punctuation.delimiter"]                 = { link = "Delimiter" }, -- For delimiters ie: `.`
-		["@punctuation.bracket"]                   = { fg = c.pinkm2 },  -- For brackets and parens.
+		["@punctuation.bracket"]                   = { fg = c.pink },  -- For brackets and parens.
 		-- ["@punctuation.special"] = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
 
 		--- Literals
@@ -212,31 +212,31 @@ function M.setup(palette)
 		["@string.escape"]                         = { fg = c.blue }, -- For escape characters within a string.
 
 		--- Functions
-		["@constructor"]                           = { fg = c.purplem2, italic = true },
-		["@parameter"]                             = { fg = c.whitem2, italic = true }, -- For parameters of a function
+		["@constructor"]                           = { fg = c.purple, italic = true },
+		["@parameter"]                             = { fg = c.white, italic = true }, -- For parameters of a function
 		["@function.builtin"]                      = { fg = c.green },
 		-- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
 
 		--- Keywords
-		["@keyword"]                               = { fg = c.bluem2, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
+		["@keyword"]                               = { fg = c.blue, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
 		["@keyword.function"]                      = { link = "Function" },
 		-- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 
 		--- Types
 		["@type"]                                  = { link = "Type" },
 		["@field"]                                 = { fg = c.fg },
-		["@type.builtin"]                          = { fg = c.yellowm2, italic = true },
+		["@type.builtin"]                          = { fg = c.yellow, italic = true },
 		["@property"]                              = { fg = c.fg },
 
 		--- Identifiers
 		["@attribute.builtin"]                     = { fg = c.blue, italic = true },               -- Variable names that are defined by the languages, like `this` or `self`.
 		["@variable"]                              = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]                      = { fg = c.purplem1, italic = true },           -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable.builtin"]                      = { fg = c.purple, italic = true },           -- Variable names that are defined by the languages, like `this` or `self`.
 		-- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
 		["@tag"]                                   = { fg = c.pink },
-		["@tag.attribute"]                         = { fg = c.bluep2, italic = true },
-		["@tag.delimiter"]                         = { fg = c.whitep1 },
+		["@tag.attribute"]                         = { fg = c.blue, italic = true },
+		["@tag.delimiter"]                         = { fg = c.white },
 		["@namespace"]                             = { link = "Include" },
 
 		--- Text
@@ -248,10 +248,10 @@ function M.setup(palette)
 		["@text.title.5.marker"]                   = { link = "@tag" },
 		["@text.title.6.marker"]                   = { link = "@tag" },
 		["@text.quote"]                            = { fg = c.fg, bg = c.fg_gutter, italic = true },
-		["@text.reference"]                        = { fg = c.pruplep2, underline = true }, -- links text -> ![text](url)
-		["@text.todo.checked"]                     = { fg = c.greenp2 },              -- For brackets and parens. [x]
-		["@text.todo.unchecked"]                   = { fg = c.orangem2 },             -- For brackets and parens. [ ]
-		["@text.uri"]                              = { fg = c.bluep1 },               -- links url -> ![text](url)
+		["@text.reference"]                        = { fg = c.pruple, underline = true }, -- links text -> ![text](url)
+		["@text.todo.checked"]                     = { fg = c.green },              -- For brackets and parens. [x]
+		["@text.todo.unchecked"]                   = { fg = c.orange },             -- For brackets and parens. [ ]
+		["@text.uri"]                              = { fg = c.blue },               -- links url -> ![text](url)
 		["@text.warning"]                          = { fg = c.bg, bg = c.warning },
 		["@text.danger"]                           = { fg = c.bg, bg = c.error },
 		["@text.diff.add"]                         = { link = "DiffAdd" },
@@ -259,7 +259,7 @@ function M.setup(palette)
 
 		--- Markdown
 		["@text.literal.markdown_inline"]          = { fg = c.pink },
-		["@lsp.type.class.markdown"]               = { fg = c.yellowm1 },
+		["@lsp.type.class.markdown"]               = { fg = c.yellow },
 		["@punctuation.bracket.markdown_inline"]   = { fg = c.purple },
 
 		-- LSP Semantic Token Groups
@@ -306,9 +306,9 @@ function M.setup(palette)
 		["@lsp.typemod.variable.static"]           = { link = "@constant" },
 
 		-- Languages specifics
-		["@function.builtin.bash"]                 = { fg = c.purplep1 },
+		["@function.builtin.bash"]                 = { fg = c.purple },
 		["@constructor.lua"]                       = { fg = c.pink },
-		["@type.qualifier.c_sharp"]                = { fg = c.yellowm1, italic = true },
+		["@type.qualifier.c_sharp"]                = { fg = c.yellow, italic = true },
 		dosbatchError                              = { fg = c.red },
 		["@property.ini"]                          = { fg = c.green },
 
@@ -331,8 +331,8 @@ function M.setup(palette)
 		CmpGhostText                               = { fg = c.blackp1 },                   -- Experimental. hl must be defined by the user
 		-- Left side
 		CmpItemAbbr                                = { fg = c.fg, bg = c.none },           -- The suggestions
-		CmpItemAbbrMatch                           = { fg = c.pinkm2, bg = c.none },       -- The current matches with the suggestions
-		CmpItemAbbrMatchFuzzy                      = { fg = c.pinkm2, bg = c.none },       -- Matches ahead current
+		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },       -- The current matches with the suggestions
+		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },       -- Matches ahead current
 		CmpItemAbbrDeprecated                      = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
 		-- Middle
 		CmpItemMenu                                = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
@@ -340,16 +340,16 @@ function M.setup(palette)
 		--- Dashboard
 		-- General
 		DashboardHeader                            = { fg = c.purple },
-		DashboardFooter                            = { fg = c.whitem1, italic = true },
+		DashboardFooter                            = { fg = c.white, italic = true },
 		-- Hyper theme
 		DashboardFiles                             = { fg = c.fg },
 		DashboardMruIcon                           = { fg = c.blue },
 		DashboardMruTitle                          = { fg = c.pink, bold = true },
-		DashboardProjectIcon                       = { fg = c.pinkm2 },
+		DashboardProjectIcon                       = { fg = c.pink },
 		DashboardProjectTitle                      = { fg = c.pink, bold = true },
-		DashboardProjectTitleIcon                  = { fg = c.pinkm2 },
+		DashboardProjectTitleIcon                  = { fg = c.pink },
 		-- DashboardShortCutIcon = { fg = c.purple },
-		DashboardShortCut                          = { fg = c.bluem2 },
+		DashboardShortCut                          = { fg = c.blue },
 		-- Doom theme
 		DashboardDesc                              = { fg = c.purple },
 		DashboardIcon                              = { fg = c.fg },
@@ -357,18 +357,18 @@ function M.setup(palette)
 
 		--- TODO:
 		--- Dirvish
-		--- DirvishSuffix                              = { fg = c.whitem1},
+		--- DirvishSuffix                              = { fg = c.white},
 		--- DirvishPathTail                            = { fg = c.blue },
-		--- DirvishArg                                 = { fg = c.yellow, bg = c.whitem1},
+		--- DirvishArg                                 = { fg = c.yellow, bg = c.white},
 
 		--- GitSigns :h gitsigns-highlight-groups
 		GitSignsCurrentLineBlame                   = { fg = c.comment, bg = c.bg_popup, italic = true },
 		GitSignsAdd                                = { link = "diffAdded" },
 		GitSignsChange                             = { link = "diffChanged" },
 		GitSignsDelete                             = { link = "diffRemoved" },
-		GitSignsAddInline                          = { fg = c.greym2, bg = c.diff.add },
-		GitSignsDeleteInline                       = { fg = c.greym2, bg = c.diff.delete },
-		GitSignsChangeInline                       = { fg = c.greym2, bg = c.diff.change },
+		GitSignsAddInline                          = { fg = c.grey, bg = c.diff.add },
+		GitSignsDeleteInline                       = { fg = c.grey, bg = c.diff.delete },
+		GitSignsChangeInline                       = { fg = c.grey, bg = c.diff.change },
 		-- GitSignsChangedelete = {},
 		-- GitSignsTopdelete = {},
 		-- GitSignsUntracked = { },
@@ -419,11 +419,11 @@ function M.setup(palette)
 		--- Notify
 		NotifyBackground                           = { fg = c.fg, bg = c.bg },
 		-- Notify Border
-		NotifyERRORBorder                          = { fg = c.redm2, bg = options.transparency and c.none or c.bg },
-		NotifyWARNBorder                           = { fg = c.yellowm2, bg = options.transparency and c.none or c.bg },
-		NotifyINFOBorder                           = { fg = c.bluem2, bg = options.transparency and c.none or c.bg },
+		NotifyERRORBorder                          = { fg = c.red, bg = options.transparency and c.none or c.bg },
+		NotifyWARNBorder                           = { fg = c.yellow, bg = options.transparency and c.none or c.bg },
+		NotifyINFOBorder                           = { fg = c.blue, bg = options.transparency and c.none or c.bg },
 		NotifyDEBUGBorder                          = { fg = c.blackm2, bg = options.transparency and c.none or c.bg },
-		NotifyTRACEBorder                          = { fg = c.purplem2, bg = options.transparency and c.none or c.bg },
+		NotifyTRACEBorder                          = { fg = c.purple, bg = options.transparency and c.none or c.bg },
 		-- Icons
 		NotifyERRORIcon                            = { fg = c.error },
 		NotifyWARNIcon                             = { fg = c.warning },
@@ -457,7 +457,7 @@ function M.setup(palette)
 		NvimTreeOpenedFolderName                   = { fg = c.fg, bold = true },
 		NvimTreeRootFolder                         = { fg = c.purple, italic = true },
 		NvimTreeSpecialFile                        = { fg = c.green, underline = true },
-		NvimTreeSymlink                            = { fg = c.bluem2 },
+		NvimTreeSymlink                            = { fg = c.blue },
 		NvimTreeWinSeparator                       = {
 			fg = c.border,
 			bg = c.bg_sidebar,
@@ -467,36 +467,36 @@ function M.setup(palette)
 		NeoTreeDimText                             = { fg = c.fg_gutter },
 
 		--- Rainbow Delimiters
-		RainbowDelimiterRed                        = { fg = c.pinkm2 },
-		RainbowDelimiterOrange                     = { fg = c.orangep2 },
+		RainbowDelimiterRed                        = { fg = c.pink },
+		RainbowDelimiterOrange                     = { fg = c.orange },
 		RainbowDelimiterYellow                     = { fg = c.yellow },
 		RainbowDelimiterGreen                      = { fg = c.green },
-		RainbowDelimiterBlue                       = { fg = c.bluem2 },
+		RainbowDelimiterBlue                       = { fg = c.blue },
 		RainbowDelimiterViolet                     = { fg = c.purple },
-		RainbowDelimiterCyan                       = { fg = c.bluep2 },
+		RainbowDelimiterCyan                       = { fg = c.blue },
 
 		--- Telescope
 		TelescopeBorder                            = { fg = c.border_highlight, bg = c.bg_float },
 		TelescopeNormal                            = { fg = c.fg, bg = c.bg_float },
-		TelescopePromptPrefix                      = { fg = c.purplem2 },
+		TelescopePromptPrefix                      = { fg = c.purple },
 		TelescopeSelection                         = { fg = c.fg, bg = c.bg_statusline },
-		TelescopeSelectionCaret                    = { fg = c.purplem2, bg = c.bg_statusline },
+		TelescopeSelectionCaret                    = { fg = c.purple, bg = c.bg_statusline },
 
 		--- Todo Comments
 		TodoBgFIX                                  = { fg = c.bg_dark, bg = c.purple, bold = true },
-		TodoBgHACK                                 = { fg = c.bg_dark, bg = c.yellowm2, bold = true },
-		TodoBgNOTE                                 = { fg = c.bg_dark, bg = c.greenp1, bold = true },
-		TodoBgPERF                                 = { fg = c.bg_dark, bg = c.bluem2, bold = true },
-		TodoBgTEST                                 = { fg = c.bg_dark, bg = c.redp2, bold = true },
-		TodoBgTODO                                 = { fg = c.bg_dark, bg = c.pinkm2, bold = true },
+		TodoBgHACK                                 = { fg = c.bg_dark, bg = c.yellow, bold = true },
+		TodoBgNOTE                                 = { fg = c.bg_dark, bg = c.green, bold = true },
+		TodoBgPERF                                 = { fg = c.bg_dark, bg = c.blue, bold = true },
+		TodoBgTEST                                 = { fg = c.bg_dark, bg = c.red, bold = true },
+		TodoBgTODO                                 = { fg = c.bg_dark, bg = c.pink, bold = true },
 		TodoBgWARN                                 = { fg = c.bg_dark, bg = c.orange, bold = true },
 
 		TodoFgFIX                                  = { fg = c.purple },
-		TodoFgHACK                                 = { fg = c.yellowm2 },
-		TodoFgNOTE                                 = { fg = c.greenp1 },
-		TodoFgPERF                                 = { fg = c.bluem2 },
-		TodoFgTEST                                 = { fg = c.redp2 },
-		TodoFgTODO                                 = { fg = c.pinkm2 },
+		TodoFgHACK                                 = { fg = c.yellow },
+		TodoFgNOTE                                 = { fg = c.green },
+		TodoFgPERF                                 = { fg = c.blue },
+		TodoFgTEST                                 = { fg = c.red },
+		TodoFgTODO                                 = { fg = c.pink },
 		TodoFgWARN                                 = { fg = c.orange },
 
 		TodoSignHACK                               = { link = "TodoFgHACK" },
@@ -509,11 +509,11 @@ function M.setup(palette)
 		--- WhichKey
 		WhichKey                                   = { fg = c.fg },
 		WhichKeyGroup                              = { fg = c.pink },
-		WhichKeySeparator                          = { fg = c.whitem1, italic = false },
+		WhichKeySeparator                          = { fg = c.white, italic = false },
 		WhichKeyDesc                               = { fg = c.fg },
 		WhichKeyFloat                              = { bg = c.bg_sidebar },
 		WhichKeyBorder                             = { fg = c.fg, bg = c.bg_sidebar },
-		WhichKeyValue                              = { fg = c.whitem1 },
+		WhichKeyValue                              = { fg = c.white },
 
 		--- Misc
 		-- For ItemKind plugins
@@ -524,44 +524,44 @@ function M.setup(palette)
 		--- Dap
 		DapUIScope                                 = { fg = c.blue },
 		DapUIType                                  = { fg = c.purple },
-		DapUIModifiedValue                         = { fg = c.bluep2 },
-		DapUIDecoration                            = { fg = c.bluep1 },
+		DapUIModifiedValue                         = { fg = c.blue },
+		DapUIDecoration                            = { fg = c.blue },
 		DapUIThread                                = { fg = c.green },
 		DapUIStoppedThread                         = { fg = c.pink },
-		DapUISource                                = { fg = c.purplep1 },
-		DapUILineNumber                            = { fg = c.bluep1 },
+		DapUISource                                = { fg = c.purple },
+		DapUILineNumber                            = { fg = c.blue },
 		DapUIFloatBorder                           = { fg = c.border_highlight, bg = c.bg_float },
 		DapUIWatchesEmpty                          = { fg = c.pink },
-		DapUIWatchesValue                          = { fg = c.greenp2 },
+		DapUIWatchesValue                          = { fg = c.green },
 		DapUIWatchesError                          = { fg = c.error },
-		DapUIBreakpointsPath                       = { fg = c.bluep1 },
-		DapUIBreakpointsInfo                       = { fg = c.purplep1 },
+		DapUIBreakpointsPath                       = { fg = c.blue },
+		DapUIBreakpointsInfo                       = { fg = c.purple },
 		DapUIBreakpointsCurrentLine                = { fg = c.green },
 		DapUIBreakpointsLine                       = { fg = c.blue },
 		DapUICurrentFrameName                      = { fg = c.green },
 		DapUIStepOver                              = { fg = c.blue },
-		DapUIStepInto                              = { fg = c.bluep1 },
-		DapUIStepBack                              = { fg = c.bluem1 },
-		DapUIStepOut                               = { fg = c.bluep2 },
-		DapUIStop                                  = { fg = c.pinkm2 },
-		DapUIPlayPause                             = { fg = c.greenp2 },
-		DapUIRestart                               = { fg = c.yellowm2 },
-		DapUIWinSelect                             = { fg = c.purplem2 },
-		DapUIPlayPauseNC                           = { fg = c.greenm2 },
-		DapUIRestartNC                             = { fg = c.yellowm2 },
-		DapUIStopNC                                = { fg = c.pinkm2 },
-		DapUIStepOverNC                            = { fg = c.bluem2 },
-		DapUIStepIntoNC                            = { fg = c.bluem2 },
-		DapUIStepBackNC                            = { fg = c.bluem2 },
-		DapUIStepOutNC                             = { fg = c.bluem2 },
+		DapUIStepInto                              = { fg = c.blue },
+		DapUIStepBack                              = { fg = c.blue },
+		DapUIStepOut                               = { fg = c.blue },
+		DapUIStop                                  = { fg = c.pink },
+		DapUIPlayPause                             = { fg = c.green },
+		DapUIRestart                               = { fg = c.yellow },
+		DapUIWinSelect                             = { fg = c.purple },
+		DapUIPlayPauseNC                           = { fg = c.green },
+		DapUIRestartNC                             = { fg = c.yellow },
+		DapUIStopNC                                = { fg = c.pink },
+		DapUIStepOverNC                            = { fg = c.blue },
+		DapUIStepIntoNC                            = { fg = c.blue },
+		DapUIStepBackNC                            = { fg = c.blue },
+		DapUIStepOutNC                             = { fg = c.blue },
 
 		--- Illuminate
-		IlluminatedWordText                        = { bg = c.greym1, underline = true },
-		IlluminatedWordRead                        = { bg = c.greym1 },
-		IlluminatedWordWrite                       = { bg = c.greym1 },
+		IlluminatedWordText                        = { bg = c.grey, underline = true },
+		IlluminatedWordRead                        = { bg = c.grey },
+		IlluminatedWordWrite                       = { bg = c.grey },
 
 		-- LighBulb
-		LightBulbSign                              = { fg = c.bluem2 },
+		LightBulbSign                              = { fg = c.blue },
 
 		--- Not Implentend Plugins --------------------------------------------
 

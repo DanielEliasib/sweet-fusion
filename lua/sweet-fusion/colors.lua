@@ -19,14 +19,19 @@ M.palette = {
 	none      = "NONE",
 	black     = "#161616",
 	white     = "#E7E6E1",
+	pink      = "#F089A4",
+	green     = "#A1C7A6",
+	purple    = "#B2ABD1",
+	yellow    = "#CCBF93",
+	blue      = "#A1B8D4",
 	-- Main 	palette
-	red       = "#E0557A",
-	pink      = "#F087A3",
+	red       = "#D17078",
+	-- pink      = "#F087A3",
 	orange    = "#F0B7A9",
-	yellow    = "#F3DFA2",
-	green     = "#A6C9A8",
-	blue      = "#B5D5E3",
-	purple    = "#D5D5ED",
+	-- yellow    = "#F3DFA2",
+	-- green     = "#A6C9A8",
+	-- blue      = "#B5D5E3",
+	-- purple    = "#D5D5ED",
 	grey      = "#7F7E7C",
 	-- Shade	s
 	blackm2   = "#0C0C0C",
@@ -66,7 +71,7 @@ M.palette = {
 	greym2    = "#313030",
 	greym1    = "#4B4A49",
 	greyp1    = "#B3B2AF",
-	greyp1    = "#CDCCC8",
+	greyp2    = "#CDCCC8",
 	greyalt   = "#57575F",
 
 	-- Gradient
@@ -92,7 +97,7 @@ function M.setup()
 	colors.bg_light = colors.blackp1
 	colors.bg_light2 = colors.greyp1
 
-	colors.fg = colors.greyp1
+	colors.fg = colors.greyp2
 	colors.fg_gutter = colors.grey
 	colors.comment = colors.grey
 
