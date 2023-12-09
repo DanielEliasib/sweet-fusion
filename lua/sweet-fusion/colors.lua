@@ -15,71 +15,91 @@
 local M = {}
 
 M.palette = {
-	-- Base
-	none      = "NONE",
-	black     = "#161616",
-	white     = "#E7E6E1",
-	pink      = "#F089A4",
-	green     = "#A1C7A6",
-	purple    = "#B2ABD1",
-	yellow    = "#CCBF93",
-	blue      = "#A1B8D4",
+	--
 	-- Main 	palette
-	red       = "#D17078",
+	-- red       = "#D17078",
 	-- pink      = "#F087A3",
-	orange    = "#F0B7A9",
+	-- orange    = "#F0B7A9",
 	-- yellow    = "#F3DFA2",
 	-- green     = "#A6C9A8",
 	-- blue      = "#B5D5E3",
 	-- purple    = "#D5D5ED",
-	grey      = "#7F7E7C",
+	-- Base
+	none          = "NONE",
+	black         = "#0F0F0F",
+	white         = "#e1e1e1",
+	red           = "#D17078",
+	orange        = "#EDAD95",
+	pink          = "#F0819F",
+	green         = "#A1C7A6",
+	purple        = "#C7C1E8",
+	yellow        = "#CCBF93",
+	blue          = "#A0C6D9",
+	grey          = "#696969",
 	-- Shade	s
-	blackm2   = "#0C0C0C",
-	blackm1   = "#0F0F0F",
-	blackp1   = "#212121",
-	blackp2   = "#2C2C2B",
-	purplem2  = "#A0A0B2",
-	purplem1  = "#BBBBD0",
-	purplep1  = "#E0E0f2",
-	purplep2  = "#E5E5F4",
-	bluem2    = "#A5C2CE",
-	bluem1    = "#AAC8D5",
-	bluep1    = "#C8E0EA",
-	bluep2    = "#DAEAF1",
-	greenm2   = "#7D977E",
-	greenm1   = "#92B093",
-	greenp1   = "#BDD7BE",
-	greenp2   = "#C8DEC9",
-	yellowm2  = "#D5C48E",
-	yellowm1  = "#E4D298",
-	yellowp1  = "#F3DFA2",
-	yellowp2  = "#F5E3AE",
-	orangem2  = "#E1AC9F",
-	orangem1  = "#E9B2A4",
-	orangep1  = "#F0B7A9",
-	orangep2  = "#F2C0B4",
-	pinkm2    = "#D2778F",
-	pinkm1    = "#E17F99",
-	pinkp1    = "#F087A3",
-	pinkp2    = "#F296AF",
-	redm2     = "#B64664",
-	redm1     = "#C44B6B",
-	redp1     = "#E0557A",
-	redp2     = "#E46B8B",
-	whitem1   = "#E0DFDA",
-	whitep1   = "#EDEDE9",
-	greym2    = "#313030",
-	greym1    = "#4B4A49",
-	greyp1    = "#B3B2AF",
-	greyp2    = "#CDCCC8",
-	greyalt   = "#57575F",
+	black_darker  = "#040404",
+	black_dark    = "#080808",
+	black_light   = "#171717",
+	black_lighter = "#1e1e1e",
+
+	purple_dark   = "#9691AE",
+	purple_light  = "#D5D1EE",
+
+	blue_dark     = "#7895A3",
+	blue_light    = "#B8D5E3",
+
+	green_dark    = "#79967D",
+	green_light   = "#B9D5BD",
+
+	yellow_dark   = "#99906F",
+	yellow_light  = "#D9CFAE",
+
+	orange_dark   = "#B28270",
+	orange_light  = "#F2C2B0",
+
+	pink_dark     = "#B46178",
+	pink_light    = "#F4A1B7",
+
+	red_dark      = "#9D545A",
+	red_light     = "#DD949A",
+
+	purple_var1   = "#C1C7E8",
+	purple_var2   = "#E0C1E8",
+
+	blue_var1     = "#A0D8D9",
+	blue_var2     = "#A0A2D9",
+
+	green_var1    = "#ABC7A1",
+	green_var2    = "#A1C7C0",
+
+	yellow_var1   = "#CCB893",
+	yellow_var2   = "#CACC93",
+
+	orange_var1   = "#ED9D95",
+	orange_var2   = "#EDCB95",
+
+	pink_var1     = "#E17F99",
+	pink_var2     = "#F087A3",
+
+	red_var1      = "#C44B6B",
+	red_var2      = "#E0557A",
+
+	white_dark    = "#c3c3c3",
+	white_light   = "#f0f0f0",
+
+	grey_darker   = "#2d2d2d",
+	grey_dark     = "#4b4b4b",
+	grey_light    = "#878787",
+	grey_lighter  = "#a5a5a5",
+
+	grey_alt      = "#57575F",
 
 	-- Gradient
-	gradient1 = "#B5D5E3",
-	gradient2 = "#C4C2D3",
-	gradient3 = "#D3AEC3",
-	gradient4 = "#E29BB3",
-	gradient5 = "#F087A3",
+	gradient1     = "#B5D5E3",
+	gradient2     = "#C4C2D3",
+	gradient3     = "#D3AEC3",
+	gradient4     = "#E29BB3",
+	gradient5     = "#F087A3",
 	-- Neon
 
 }
@@ -91,58 +111,57 @@ function M.setup()
 	local colors = M.palette -- TODO: Add ligth and dark palette
 
 	-- colors.bg = cfg.options.transparency and "NONE" or colors.black
-	colors.bg = colors.blackm1
-	colors.bg_dark = colors.blackm2
-	colors.bg_dark2 = colors.greym2
-	colors.bg_light = colors.blackp1
-	colors.bg_light2 = colors.greyp1
+	colors.bg = colors.black
+	colors.bg_dark = colors.black_darker
+	colors.bg_light = colors.black_light
 
-	colors.fg = colors.greyp2
-	colors.fg_gutter = colors.grey
+	colors.fg = colors.white
+	colors.fg_gutter = colors.grey_dark
 	colors.comment = colors.grey
 
-	colors.border = colors.whitem1
-	colors.border_highlight = colors.bluep1
+	colors.border = colors.white_dark
+	colors.border_highlight = colors.blue_dark
 
 	-- Satusline
-	colors.bg_statusline = colors.blackp2
-	colors.fg_statusline = colors.white
+	-- colors.bg_statusline = colors.blackp2
+	colors.bg_statusline = colors.purple_dark
+	colors.fg_statusline = colors.black_dark
 
 	-- Sidebar and Floats
 	colors.bg_sidebar = colors.black
-	colors.bg_float = colors.blackm2
-	colors.fg_float = colors.whitem1
+	colors.fg_sidebar = colors.white_light
+	colors.bg_float = colors.black_dark
+	colors.fg_float = colors.white_dark
 
 	-- Set the background for the current line (current cursor position)
-	colors.bg_highlight = colors.blackm1
+	colors.bg_highlight = colors.black_dark
 
-	colors.bg_visual = colors.greym2
-	colors.bg_search = colors.yellowm2
-	colors.fg_search = colors.blackm2
-	colors.fg_sidebar = colors.whitep1
+	colors.bg_visual = colors.grey_darker
+	colors.bg_search = colors.yellow_dark
+	colors.fg_search = colors.black_darker
 
 	-- Popup menu
-	colors.bg_popup = colors.blackp1
-	colors.bg_menuselbar = colors.blackp2
-	colors.bg_menusel = colors.blackp2
+	colors.bg_popup = colors.black_light
+	colors.bg_menuselbar = colors.black_lighter
+	colors.bg_menusel = colors.black_lighter
 
 	-- Extras
-	colors.error = colors.redm2
+	colors.error = colors.red
 	colors.warning = colors.orange
 	colors.info = colors.purple
-	colors.hint = colors.bluep1
+	colors.hint = colors.purple_dark
 	colors.diff = {
-		add = colors.greenp2,
-		delete = colors.redp2,
-		change = colors.yellowp2,
-		text = colors.bluep2
+		add = colors.green,
+		delete = colors.red,
+		change = colors.yellow,
+		text = colors.blue
 	}
 
 	colors.base = {
 		colors.white, colors.yellow, colors.orange, colors.red, colors.purple, colors.blue
 	}
 	colors.base_bg = {
-		colors.black, colors.yellowm2, colors.orangem2, colors.redm2, colors.purplem2, colors.bluem2
+		colors.black, colors.yellow_dark, colors.orange_dark, colors.red_dark, colors.purple_dark, colors.blue_dark
 	}
 
 	return colors

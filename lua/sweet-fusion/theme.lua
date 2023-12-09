@@ -23,9 +23,9 @@ function M.setup(palette)
 		Comment                                    = { fg = c.comment, style = options.hl_styles.comments }, -- any comment
 		Conceal                                    = {},                                               -- ??
 		CurSearch                                  = { link = 'IncSearch' },                           -- current search match
-		Cursor                                     = { fg = c.bg, bg = c.white },                    -- character under the cursor
+		Cursor                                     = { fg = c.bg, bg = c.white },                      -- character under the cursor
 		CursorColumn                               = { bg = c.bg_highlight },                          -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorIM                                   = { fg = c.bg, bg = c.white },                    -- like Cursor, but used when in IME mode |CursorIM|
+		CursorIM                                   = { fg = c.bg, bg = c.white },                      -- like Cursor, but used when in IME mode |CursorIM|
 		CursorLine                                 = { bg = c.bg_highlight },                          -- Screen-line at the cursor, when 'cursorline' is set.
 		CursorLineNr                               = { fg = c.red },                                   -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		DiffAdd                                    = { fg = c.bg_dark, bg = c.diff.add },              -- diff mode: Added line |diff.txt|
@@ -39,50 +39,50 @@ function M.setup(palette)
 		Folded                                     = { fg = c.comment, bg = c.bg_sidebar, italic = true }, -- line used for closed folds
 		FoldColumn                                 = { fg = c.comment, bg = c.bg_float },              -- 'foldcolumn'
 
-		RedrawDebugClear                           = { fg = c.bg_dar, bg = c.yellow },               -- debug: breakpoints
-		RedrawDebugComposed                        = { fg = c.bg_dar, bg = c.green },
+		RedrawDebugClear                           = { fg = c.bg_dark, bg = c.yellow },                -- debug: breakpoints
+		RedrawDebugComposed                        = { fg = c.bg_dark, bg = c.green },
 
-		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },           -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },             -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr                                     = { fg = c.fg_gutter },                                         -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		LineNrBe                                   = { fg = c.purple },
-		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },           -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg                                    = { fg = c.white, bold = true },                              -- 'showmode' message (e.g., "-- INSERT -- ")
-		MoreMsg                                    = { fg = c.pink },                                            -- |more-prompt|
+		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },             -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg                                    = { fg = c.white, bold = true },                                -- 'showmode' message (e.g., "-- INSERT -- ")
+		MoreMsg                                    = { fg = c.pink },                                              -- |more-prompt|
 		MsgArea                                    = { fg = c.fg },                                                -- Area for messages and cmdline
 		MsgSeparator                               = { sp = c.border, underline = true },                          -- Separator for scrolled messages, `msgsep` flag of 'display'
-		NonText                                    = { fg = c.blackp2 },                                           -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText                                    = { fg = c.black_lighter },                                     -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal                                     = { fg = c.fg, bg = options.transparency and c.none or c.bg },  -- normal text
 		NormalFloat                                = { fg = c.fg_float, bg = c.bg_float },                         -- Normal text in floating windows.
-		NormalNC                                   = { fg = c.fg, bg = options.dim_inactive and c.black or c.bg }, -- normal text in non-current windows
+		NormalNC                                   = { fg = c.fg, bg = options.dim_inactive and c.bg_light or c.bg }, -- normal text in non-current windows
 		NormalSB                                   = { fg = c.fg_sidebar, bg = c.bg_sidebar },                     -- normal text in sidebar
 		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                               -- Popup/wildMenu: normal item.
 		PmenuSbar                                  = { bg = c.bg_menuselbar },                                     -- bg = c.grey -- Popup/WildMenu: scrollbar.
 		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                             -- Popup/WildMenu: selected item.
-		PmenuThumb                                 = { fg = c.blackp1, bg = c.purple },                          -- Popup/WildMenu: Thumb of the scrollbar.
-		Question                                   = { fg = c.purple },                                          -- |hit-enter| prompt and yes/no questions
+		PmenuThumb                                 = { fg = c.black_light, bg = c.purple },                        -- Popup/WildMenu: Thumb of the scrollbar.
+		Question                                   = { fg = c.purple },                                            -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },        -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
 		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                      -- column where |signs| are displayed
-		SpecialKey                                 = { fg = c.blue },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpecialKey                                 = { fg = c.blue },                                              -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad                                   = { sp = c.error, undercurl = true },                           -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap                                   = { sp = c.warning, undercurl = true },                         -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal                                 = { sp = c.info, undercurl = true },                            -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		SpellRare                                  = { sp = c.hint, undercurl = true },                            -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                                 = { fg = c.fg_sidebar, bg = c.bg_statusline },                  -- status line of current window
-		StatusLineNC                               = { fg = c.fg_gutter, bg = c.bg_statusline },                   -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine                                 = { fg = c.fg_statusline, bg = c.bg_statusline },               -- status line of current window
+		StatusLineNC                               = { fg = c.bg_statusline, bg = c.fg_statusline },               -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		Substitute                                 = { fg = c.black, bg = c.green },                               -- |:substitute| replacement text highlighting
-		TabLine                                    = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, not active tab page label
-		TabLineFill                                = { bg = c.blackp2 },                                           -- tab pages line, where there are no labels
-		TabLineSel                                 = { bg = c.bg },                                                -- tab pages line, active tab page label
+		TabLine                                    = { fg = c.bg_statusline, bg = c.fg_statusline, underline = true }, -- tab pages line, not active tab page label
+		TabLineFill                                = { bg = c.bg_light },                                          -- tab pages line, where there are no labels
+		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, active tab page label
 		TermCursor                                 = { fg = c.bg, bg = c.fg },                                     -- cursor in a focused terminal
 		TermCursorNC                               = { fg = c.bg, bg = c.fg_dark },                                -- cursor in an unfocused terminal
 		Title                                      = { fg = c.fg, bold = true },                                   -- titles for output from ":set all", ":autocmd" etc.
 		VertSplit                                  = { fg = c.border },                                            -- the column separating vertically split windows
 		Visual                                     = { bg = c.bg_visual },                                         -- Visual mode selection
 		-- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-		WarningMsg                                 = { fg = c.pink },                                            -- warning messages
-		Whitespace                                 = { fg = c.blackp2 },                                           -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WarningMsg                                 = { fg = c.pink },                                              -- warning messages
+		Whitespace                                 = { fg = c.black_lighter },                                     -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- TODO: FIX WildMenu
 		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                       -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
 		WinSeparator                               = { fg = c.border },                                            -- the column separating vertically split windows
@@ -99,39 +99,39 @@ function M.setup(palette)
 
 		Boolean                                    = { fg = c.green },                                 -- a boolean constant: TRUE, false
 		Character                                  = { fg = c.orange },                                --  a character constant: 'c', '\n'
-		Conditional                                = { fg = c.pink },                                -- if, then, else, endif, switch, etc.
-		Constant                                   = { fg = c.orange },                              -- (preferred) any constant
-		Debug                                      = { fg = c.blue },                                -- debugging statements
-		Define                                     = { fg = c.purple },                              -- preprocessor #define
-		Delimiter                                  = { fg = c.white },                               -- character that needs attention
-		Error                                      = { fg = c.white, bg = c.red },                 -- (preferred) any erroneous construct
-		Exception                                  = { fg = c.orange },                              --  try, catch, throw
-		Float                                      = { fg = c.orange },                              -- a floating point constant: 2.3e10
+		Conditional                                = { fg = c.pink },                                  -- if, then, else, endif, switch, etc.
+		Constant                                   = { fg = c.orange },                                -- (preferred) any constant
+		Debug                                      = { fg = c.blue },                                  -- debugging statements
+		Define                                     = { fg = c.purple },                                -- preprocessor #define
+		Delimiter                                  = { fg = c.white },                                 -- character that needs attention
+		Error                                      = { fg = c.white, bg = c.red },                     -- (preferred) any erroneous construct
+		Exception                                  = { fg = c.orange },                                --  try, catch, throw
+		Float                                      = { fg = c.orange },                                -- a floating point constant: 2.3e10
 		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
 		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
-		Include                                    = { fg = c.pink },                                -- preprocessor #include
+		Include                                    = { fg = c.pink },                                  -- preprocessor #include
 		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords }, -- any other keyword
-		Label                                      = { fg = c.green },                              -- case, default, etc.
-		Macro                                      = { fg = c.orange },                              -- same as Define
-		Number                                     = { fg = c.orange },                              --   a number constant: 234, 0xff
-		Operator                                   = { fg = c.red },                                 -- "sizeof", "+", "*", etc.
+		Label                                      = { fg = c.green },                                 -- case, default, etc.
+		Macro                                      = { fg = c.orange },                                -- same as Define
+		Number                                     = { fg = c.orange },                                --   a number constant: 234, 0xff
+		Operator                                   = { fg = c.red },                                   -- "sizeof", "+", "*", etc.
 		PreCondit                                  = { fg = c.blue },                                  -- preprocessor #if, #else, #endif, etc.
 		PreProc                                    = { fg = c.blue },                                  -- (preferred) generic Preprocessor
 		Repeat                                     = { fg = c.purple },                                -- for, do, while, etc.
 		Special                                    = { fg = c.purple },                                -- (preferred) any special symbol
 		-- SpecialChar = { }, --  special character in a constant
 		-- SpecialComment = { }, -- special things inside a comment
-		Statement                                  = { fg = c.orange },           -- (preferred) any statement
+		Statement                                  = { fg = c.orange },          -- (preferred) any statement
 		StorageClass                               = { fg = c.yellow, italic = true }, -- static, register, volatile, etc.
-		String                                     = { fg = c.purple },         --   a string pinkant: "this is a string"
-		Structure                                  = { fg = c.blue },             -- struct, union, enum, etc.
-		Tag                                        = { fg = c.pink },             -- you can use CTRL-] on this
+		String                                     = { fg = c.purple },          --   a string pinkant: "this is a string"
+		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
+		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purple },         -- (preferred) int, long, char, etc.
-		Typedef                                    = { fg = c.blue },             -- A typedef
+		Type                                       = { fg = c.purple },          -- (preferred) int, long, char, etc.
+		Typedef                                    = { fg = c.blue },            -- A typedef
 		qfFileName                                 = { fg = c.purple },
-		qfLineNr                                   = { fg = c.blackp2 },
+		qfLineNr                                   = { fg = c.black_lighter },
 
 		-- Diff
 		diffAdded                                  = { fg = c.diff.add },
@@ -156,27 +156,27 @@ function M.setup(palette)
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText                           = { bg = c.fg_gutter },                          -- used for highlighting "text" references
-		LspReferenceRead                           = { bg = c.fg_gutter },                          -- used for highlighting "read" references
-		LspReferenceWrite                          = { bg = c.fg_gutter },                          -- used for highlighting "write" references
+		LspReferenceText                           = { bg = c.fg_gutter },                                -- used for highlighting "text" references
+		LspReferenceRead                           = { bg = c.fg_gutter },                                -- used for highlighting "read" references
+		LspReferenceWrite                          = { bg = c.fg_gutter },                                -- used for highlighting "write" references
 
-		LspInlayHint                               = { fg = c.greyalt },                            -- used for "hint" virtual text
+		LspInlayHint                               = { fg = c.greyalt },                                  -- used for "hint" virtual text
 
-		DiagnosticError                            = { fg = c.error },                              -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn                             = { fg = c.warning },                            -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo                             = { fg = c.info },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint                             = { fg = c.hint },                               -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticUnnecessary                      = { fg = c.blackp2, italic = true, undercurl = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError                            = { fg = c.error },                                    -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn                             = { fg = c.warning },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo                             = { fg = c.info },                                     -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint                             = { fg = c.hint },                                     -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticUnnecessary                      = { fg = c.black_lighter, italic = true, undercurl = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticVirtualTextError                 = { fg = c.error, bg = c.bg_dark },              -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn                  = { fg = c.warning, bg = c.bg_dark },            -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo                  = { fg = c.info, bg = c.bg_dark },               -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint                  = { fg = c.hint, bg = c.bg_dark },               -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextError                 = { fg = c.error, bg = c.bg_dark },                    -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn                  = { fg = c.warning, bg = c.bg_dark },                  -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo                  = { fg = c.info, bg = c.bg_dark },                     -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint                  = { fg = c.hint, bg = c.bg_dark },                     -- Used for "Hint" diagnostic virtual text
 
-		DiagnosticUnderlineError                   = { undercurl = true, sp = c.error },            -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn                    = { undercurl = true, sp = c.warning },          -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo                    = { undercurl = true, sp = c.info },             -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint                    = { undercurl = true, sp = c.hint },             -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineError                   = { undercurl = true, sp = c.error },                  -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn                    = { undercurl = true, sp = c.warning },                -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo                    = { undercurl = true, sp = c.info },                   -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint                    = { undercurl = true, sp = c.hint },                   -- Used to underline "Hint" diagnostics
 
 		-- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
 		-- LspCodeLens = { fg = c.comment },
@@ -231,7 +231,7 @@ function M.setup(palette)
 		--- Identifiers
 		["@attribute.builtin"]                     = { fg = c.blue, italic = true },               -- Variable names that are defined by the languages, like `this` or `self`.
 		["@variable"]                              = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]                      = { fg = c.purple, italic = true },           -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable.builtin"]                      = { fg = c.purple, italic = true },             -- Variable names that are defined by the languages, like `this` or `self`.
 		-- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
 		["@tag"]                                   = { fg = c.pink },
@@ -328,11 +328,11 @@ function M.setup(palette)
 		--- Cmp
 		CmpDocumentation                           = { fg = c.fg, bg = c.bg_float },
 		CmpDocumentationBorder                     = { fg = c.border_highlight, bg = c.bg_float },
-		CmpGhostText                               = { fg = c.blackp1 },                   -- Experimental. hl must be defined by the user
+		CmpGhostText                               = { fg = c.black_light },               -- Experimental. hl must be defined by the user
 		-- Left side
 		CmpItemAbbr                                = { fg = c.fg, bg = c.none },           -- The suggestions
-		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },       -- The current matches with the suggestions
-		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },       -- Matches ahead current
+		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },         -- The current matches with the suggestions
+		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },         -- Matches ahead current
 		CmpItemAbbrDeprecated                      = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
 		-- Middle
 		CmpItemMenu                                = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
@@ -422,7 +422,7 @@ function M.setup(palette)
 		NotifyERRORBorder                          = { fg = c.red, bg = options.transparency and c.none or c.bg },
 		NotifyWARNBorder                           = { fg = c.yellow, bg = options.transparency and c.none or c.bg },
 		NotifyINFOBorder                           = { fg = c.blue, bg = options.transparency and c.none or c.bg },
-		NotifyDEBUGBorder                          = { fg = c.blackm2, bg = options.transparency and c.none or c.bg },
+		NotifyDEBUGBorder                          = { fg = c.black_darker, bg = options.transparency and c.none or c.bg },
 		NotifyTRACEBorder                          = { fg = c.purple, bg = options.transparency and c.none or c.bg },
 		-- Icons
 		NotifyERRORIcon                            = { fg = c.error },
@@ -479,7 +479,7 @@ function M.setup(palette)
 		TelescopeBorder                            = { fg = c.border_highlight, bg = c.bg_float },
 		TelescopeNormal                            = { fg = c.fg, bg = c.bg_float },
 		TelescopePromptPrefix                      = { fg = c.purple },
-		TelescopeSelection                         = { fg = c.fg, bg = c.bg_statusline },
+		TelescopeSelection                         = { fg = c.fg, bg = c.bg_visual },
 		TelescopeSelectionCaret                    = { fg = c.purple, bg = c.bg_statusline },
 
 		--- Todo Comments
