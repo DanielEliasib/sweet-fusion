@@ -33,7 +33,7 @@ M.palette = {
 	pink          = "#F0819F",
 	green         = "#A1C7A6",
 	purple        = "#C7C1E8",
-	yellow        = "#CCBF93",
+	yellow        = "#CCBF93",	-- *
 	blue          = "#A0C6D9",
 	grey          = "#696969",
 	-- Shade	s
@@ -120,11 +120,11 @@ function M.setup()
 	colors.comment = colors.grey
 
 	colors.border = colors.white_dark
-	colors.border_highlight = colors.blue_dark
+	colors.border_highlight = colors.blue_light
 
 	-- Satusline
 	-- colors.bg_statusline = colors.blackp2
-	colors.bg_statusline = colors.purple_dark
+	colors.bg_statusline = colors.purple_light
 	colors.fg_statusline = colors.black_dark
 
 	-- Sidebar and Floats
@@ -137,7 +137,7 @@ function M.setup()
 	colors.bg_highlight = colors.black_dark
 
 	colors.bg_visual = colors.grey_darker
-	colors.bg_search = colors.yellow_dark
+	colors.bg_search = colors.yellow_var1
 	colors.fg_search = colors.black_darker
 
 	-- Popup menu
@@ -149,7 +149,7 @@ function M.setup()
 	colors.error = colors.red
 	colors.warning = colors.orange
 	colors.info = colors.purple
-	colors.hint = colors.purple_dark
+	colors.hint = colors.purple_light
 	colors.diff = {
 		add = colors.green,
 		delete = colors.red,

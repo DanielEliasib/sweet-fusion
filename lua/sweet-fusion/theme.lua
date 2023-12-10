@@ -42,51 +42,54 @@ function M.setup(palette)
 		RedrawDebugClear                           = { fg = c.bg_dark, bg = c.yellow },                -- debug: breakpoints
 		RedrawDebugComposed                        = { fg = c.bg_dark, bg = c.green },
 
-		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },             -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		LineNr                                     = { fg = c.fg_gutter },                                         -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },           -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		LineNr                                     = { fg = c.fg_gutter },                                       -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		LineNrBe                                   = { fg = c.purple },
-		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },             -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg                                    = { fg = c.white, bold = true },                                -- 'showmode' message (e.g., "-- INSERT -- ")
-		MoreMsg                                    = { fg = c.pink },                                              -- |more-prompt|
-		MsgArea                                    = { fg = c.fg },                                                -- Area for messages and cmdline
-		MsgSeparator                               = { sp = c.border, underline = true },                          -- Separator for scrolled messages, `msgsep` flag of 'display'
-		NonText                                    = { fg = c.black_lighter },                                     -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal                                     = { fg = c.fg, bg = options.transparency and c.none or c.bg },  -- normal text
-		NormalFloat                                = { fg = c.fg_float, bg = c.bg_float },                         -- Normal text in floating windows.
+		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },           -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg                                    = { fg = c.white, bold = true },                              -- 'showmode' message (e.g., "-- INSERT -- ")
+		MoreMsg                                    = { fg = c.pink },                                            -- |more-prompt|
+		MsgArea                                    = { fg = c.fg },                                              -- Area for messages and cmdline
+		MsgSeparator                               = { sp = c.border, underline = true },                        -- Separator for scrolled messages, `msgsep` flag of 'display'
+		NonText                                    = { fg = c.black_lighter },                                   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal                                     = { fg = c.fg, bg = options.transparency and c.none or c.bg }, -- normal text
+		NormalFloat                                = { fg = c.fg_float, bg = c.bg_float },                       -- Normal text in floating windows.
 		NormalNC                                   = { fg = c.fg, bg = options.dim_inactive and c.bg_light or c.bg }, -- normal text in non-current windows
-		NormalSB                                   = { fg = c.fg_sidebar, bg = c.bg_sidebar },                     -- normal text in sidebar
-		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                               -- Popup/wildMenu: normal item.
-		PmenuSbar                                  = { bg = c.bg_menuselbar },                                     -- bg = c.grey -- Popup/WildMenu: scrollbar.
-		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                             -- Popup/WildMenu: selected item.
-		PmenuThumb                                 = { fg = c.black_light, bg = c.purple },                        -- Popup/WildMenu: Thumb of the scrollbar.
-		Question                                   = { fg = c.purple },                                            -- |hit-enter| prompt and yes/no questions
+		NormalSB                                   = { fg = c.fg_sidebar, bg = c.bg_sidebar },                   -- normal text in sidebar
+		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                             -- Popup/wildMenu: normal item.
+		PmenuSbar                                  = { bg = c.bg_menuselbar },                                   -- bg = c.grey -- Popup/WildMenu: scrollbar.
+		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                           -- Popup/WildMenu: selected item.
+		PmenuThumb                                 = { fg = c.black_light, bg = c.purple },                      -- Popup/WildMenu: Thumb of the scrollbar.
+		Question                                   = { fg = c.purple },                                          -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },        -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
+		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },      -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		-- SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
+		SignColumn                                 = { fg = c.fg_gutter },                                       -- column where |signs| are displayed
 		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                      -- column where |signs| are displayed
-		SpecialKey                                 = { fg = c.blue },                                              -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad                                   = { sp = c.error, undercurl = true },                           -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap                                   = { sp = c.warning, undercurl = true },                         -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal                                 = { sp = c.info, undercurl = true },                            -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare                                  = { sp = c.hint, undercurl = true },                            -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                                 = { fg = c.fg_statusline, bg = c.bg_statusline },               -- status line of current window
-		StatusLineNC                               = { fg = c.bg_statusline, bg = c.fg_statusline },               -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		Substitute                                 = { fg = c.black, bg = c.green },                               -- |:substitute| replacement text highlighting
+		SpecialKey                                 = { fg = c.blue },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad                                   = { sp = c.error, undercurl = true },                         -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap                                   = { sp = c.warning, undercurl = true },                       -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal                                 = { sp = c.info, undercurl = true },                          -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare                                  = { sp = c.hint, undercurl = true },                          -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine                                 = { fg = c.fg_statusline, bg = c.bg_statusline },             -- status line of current window
+		StatusLineNC                               = { fg = c.bg_statusline, bg = c.fg_statusline },             -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		Substitute                                 = { fg = c.black, bg = c.green },                             -- |:substitute| replacement text highlighting
 		TabLine                                    = { fg = c.bg_statusline, bg = c.fg_statusline, underline = true }, -- tab pages line, not active tab page label
-		TabLineFill                                = { bg = c.bg_light },                                          -- tab pages line, where there are no labels
+		TabLineFill                                = { bg = c.bg_light },                                        -- tab pages line, where there are no labels
 		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, active tab page label
-		TermCursor                                 = { fg = c.bg, bg = c.fg },                                     -- cursor in a focused terminal
-		TermCursorNC                               = { fg = c.bg, bg = c.fg_dark },                                -- cursor in an unfocused terminal
-		Title                                      = { fg = c.fg, bold = true },                                   -- titles for output from ":set all", ":autocmd" etc.
-		VertSplit                                  = { fg = c.border },                                            -- the column separating vertically split windows
-		Visual                                     = { bg = c.bg_visual },                                         -- Visual mode selection
+		TermCursor                                 = { fg = c.bg, bg = c.fg },                                   -- cursor in a focused terminal
+		TermCursorNC                               = { fg = c.bg, bg = c.fg_dark },                              -- cursor in an unfocused terminal
+		Title                                      = { fg = c.fg, bold = true },                                 -- titles for output from ":set all", ":autocmd" etc.
+		VertSplit                                  = { fg = c.border },                                          -- the column separating vertically split windows
+		Visual                                     = { bg = c.bg_visual },                                       -- Visual mode selection
 		-- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-		WarningMsg                                 = { fg = c.pink },                                              -- warning messages
-		Whitespace                                 = { fg = c.black_lighter },                                     -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WarningMsg                                 = { fg = c.pink },                                            -- warning messages
+		Whitespace                                 = { fg = c.black_lighter },                                   -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- TODO: FIX WildMenu
-		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                       -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
-		WinSeparator                               = { fg = c.border },                                            -- the column separating vertically split windows
-		lCursor                                    = { fg = c.bg, bg = c.pink },                                   -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                     -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
+		WinSeparator                               = { fg = c.border },                                          -- the column separating vertically split windows
+		-- WinBar                                     = { bg = c.pink },
+		-- WinBarNC                                   = { bg = c.blue },
+		lCursor                                    = { fg = c.bg, bg = c.pink }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
 		-- These groups are not listed as default vim groups, but they are
 		-- defacto standard group names for syntax highlighting. commented out
@@ -160,7 +163,7 @@ function M.setup(palette)
 		LspReferenceRead                           = { bg = c.fg_gutter },                                -- used for highlighting "read" references
 		LspReferenceWrite                          = { bg = c.fg_gutter },                                -- used for highlighting "write" references
 
-		LspInlayHint                               = { fg = c.greyalt },                                  -- used for "hint" virtual text
+		LspInlayHint                               = { fg = c.grey_alt },                                 -- used for "hint" virtual text
 
 		DiagnosticError                            = { fg = c.error },                                    -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn                             = { fg = c.warning },                                  -- Used as the base highlight group. Other Diagnostic highlights link to this by default
@@ -227,11 +230,12 @@ function M.setup(palette)
 		["@field"]                                 = { fg = c.fg },
 		["@type.builtin"]                          = { fg = c.yellow, italic = true },
 		["@property"]                              = { fg = c.fg },
+		["@constant"]                              = { link = "Constant" },
 
 		--- Identifiers
-		["@attribute.builtin"]                     = { fg = c.blue, italic = true },               -- Variable names that are defined by the languages, like `this` or `self`.
-		["@variable"]                              = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
-		["@variable.builtin"]                      = { fg = c.purple, italic = true },             -- Variable names that are defined by the languages, like `this` or `self`.
+		["@attribute.builtin"]                     = { fg = c.blue, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable"]                              = { link = "Identifier" },    -- Any variable name that does not have another highlight.
+		["@variable.builtin"]                      = { fg = c.purple, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
 		["@tag"]                                   = { fg = c.pink },
@@ -321,21 +325,22 @@ function M.setup(palette)
 		--- Plugins -----------------------------------------------------------
 
 		--- Aerial
-		AerialNormal                               = { fg = c.fg, bg = c.none },
-		AerialGuide                                = { fg = c.fg_gutter },
+		AerialNormal                               = { fg = c.fg },
 		AerialLine                                 = { link = "LspInlayHint" },
 
 		--- Cmp
 		CmpDocumentation                           = { fg = c.fg, bg = c.bg_float },
 		CmpDocumentationBorder                     = { fg = c.border_highlight, bg = c.bg_float },
-		CmpGhostText                               = { fg = c.black_light },               -- Experimental. hl must be defined by the user
+		CmpGhostText                               = { fg = c.black_light }, -- Experimental. hl must be defined by the user
+
 		-- Left side
 		CmpItemAbbr                                = { fg = c.fg, bg = c.none },           -- The suggestions
 		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },         -- The current matches with the suggestions
 		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },         -- Matches ahead current
 		CmpItemAbbrDeprecated                      = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
+
 		-- Middle
-		CmpItemMenu                                = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
+		CmpItemMenu                                = { fg = c.comment }, -- The [source of the suggestion, LSP, luasnip...]
 
 		--- Dashboard
 		-- General
@@ -355,20 +360,14 @@ function M.setup(palette)
 		DashboardIcon                              = { fg = c.fg },
 		DashboardKey                               = { fg = c.pink },
 
-		--- TODO:
-		--- Dirvish
-		--- DirvishSuffix                              = { fg = c.white},
-		--- DirvishPathTail                            = { fg = c.blue },
-		--- DirvishArg                                 = { fg = c.yellow, bg = c.white},
-
 		--- GitSigns :h gitsigns-highlight-groups
 		GitSignsCurrentLineBlame                   = { fg = c.comment, bg = c.bg_popup, italic = true },
 		GitSignsAdd                                = { link = "diffAdded" },
 		GitSignsChange                             = { link = "diffChanged" },
 		GitSignsDelete                             = { link = "diffRemoved" },
-		GitSignsAddInline                          = { fg = c.grey, bg = c.diff.add },
-		GitSignsDeleteInline                       = { fg = c.grey, bg = c.diff.delete },
-		GitSignsChangeInline                       = { fg = c.grey, bg = c.diff.change },
+		GitSignsAddInline                          = { fg = c.bg, bg = c.diff.add },
+		GitSignsDeleteInline                       = { fg = c.bg, bg = c.diff.delete },
+		GitSignsChangeInline                       = { fg = c.bg, bg = c.diff.change },
 		-- GitSignsChangedelete = {},
 		-- GitSignsTopdelete = {},
 		-- GitSignsUntracked = { },
@@ -391,129 +390,156 @@ function M.setup(palette)
 		-- GitSignsDeleteVirtLnInLine = {},
 		-- GitSignsVirtLnum = {},
 
-		--- TODO:
-		--- headlines.nvim
-		-- CodeBlock                                  = { bg = c.bg_dark },
-		-- Headline                                   = { link = "Headline1" },
-		-- Quote                                      = { fg = c.bg, bg = c.fg_gutter },
-		-- Dash                                       = { fg = c.orange, bold = true },
-		-- For Headline-i levels check the section after this table.
-
-		--- TODO:
-		--- indent-blankline
-		-- IndentBlanklineChar                        = { fg = c.fg_gutter, nocombine = true },
-		-- IndentBlanklineSpaceChar                   = { fg = c.fg_dark, nocombine = true },
-		-- IndentBlanklineContextChar                 = { fg = c.blue, nocombine = true },
-		-- IblIndent                                  = { fg = c.fg_gutter, nocombine = true },
-		-- IblWhitespace                              = { fg = c.fg_dark, nocombine = true },
-		-- IblScope                                   = { fg = c.blue, nocombine = true },
-
 		--- Lazy
 		LazyProgressDone                           = { fg = c.purple, bold = true },
-		LazyProgressTodo                           = { fg = c.fg_gutter, bold = true },
+		LazyProgressTodo                           = { fg = c.pink, bold = true },
+		LazyButton                                 = { fg = c.blue, bold = true },
 
 		--- Navic
-		NavicText                                  = { fg = c.fg, bg = c.none },
-		NavicSeparator                             = { fg = c.fg, bg = c.none },
+		NavicIconsFile                             = { link = "qfFileName" },
+		NavicIconsModule                           = { link = "@type.builtin" },
+		NavicIconsNamespace                        = { link = "Include" },
+		NavicIconsPackage                          = { link = "@type.builtin" },
+		NavicIconsClass                            = { link = "@type.builtin" },
+		NavicIconsMethod                           = { link = "Function" },
+		NavicIconsProperty                         = { link = "@property" },
+		NavicIconsField                            = { link = "@field" },
+		NavicIconsConstructor                      = { link = "@constructor" },
+		NavicIconsEnum                             = { link = "Structure" },
+		NavicIconsInterface                        = { link = "@type.builtin" },
+		NavicIconsFunction                         = { link = "Function" },
+		NavicIconsVariable                         = { link = "@variable" },
+		NavicIconsConstant                         = { link = "Constant" },
+		NavicIconsString                           = { link = "String" },
+		NavicIconsNumber                           = { link = "Number" },
+		NavicIconsBoolean                          = { link = "Boolean" },
+		NavicIconsArray                            = { link = "@variable" },
+		NavicIconsObject                           = { link = "@type.builtin" },
+		NavicIconsKey                              = { link = "Keyword" },
+		NavicIconsNull                             = { fg = c.red },
+		NavicIconsEnumMember                       = { link = "@lsp.type.enumMember" },
+		NavicIconsStruct                           = { link = "Structure" },
+		NavicIconsEvent                            = { link = "Function" },
+		NavicIconsOperator                         = { link = "Operator" },
+		NavicIconsTypeParameter                    = { link = "Type" },
+
+		NavicText                                  = { fg = c.fg },
+		NavicSeparator                             = { fg = c.border_highlight },
+
+		-- NavBuddy
+		-- NavbuddyName                               = { fg = c.purple, bold = true },
+
 
 		--- Notify
-		NotifyBackground                           = { fg = c.fg, bg = c.bg },
+		NotifyBackground            = { fg = c.fg, bg = c.bg },
+
 		-- Notify Border
-		NotifyERRORBorder                          = { fg = c.red, bg = options.transparency and c.none or c.bg },
-		NotifyWARNBorder                           = { fg = c.yellow, bg = options.transparency and c.none or c.bg },
-		NotifyINFOBorder                           = { fg = c.blue, bg = options.transparency and c.none or c.bg },
-		NotifyDEBUGBorder                          = { fg = c.black_darker, bg = options.transparency and c.none or c.bg },
-		NotifyTRACEBorder                          = { fg = c.purple, bg = options.transparency and c.none or c.bg },
+		NotifyERRORBorder           = { fg = c.red, bg = options.transparency and c.none or c.bg },
+		NotifyWARNBorder            = { fg = c.yellow, bg = options.transparency and c.none or c.bg },
+		NotifyINFOBorder            = { fg = c.blue, bg = options.transpayrency and c.none or c.bg },
+		NotifyDEBUGBorder           = { fg = c.black_darker, bg = options.transparency and c.none or c.bg },
+		NotifyTRACEBorder           = { fg = c.purple, bg = options.transparency and c.none or c.bg },
+
 		-- Icons
-		NotifyERRORIcon                            = { fg = c.error },
-		NotifyWARNIcon                             = { fg = c.warning },
-		NotifyINFOIcon                             = { fg = c.info },
-		NotifyDEBUGIcon                            = { fg = c.comment },
-		NotifyTRACEIcon                            = { fg = c.purple },
+		NotifyERRORIcon             = { fg = c.error },
+		NotifyWARNIcon              = { fg = c.warning },
+		NotifyINFOIcon              = { fg = c.info },
+		NotifyDEBUGIcon             = { fg = c.comment },
+		NotifyTRACEIcon             = { fg = c.purple },
+
 		-- Title
-		NotifyERRORTitle                           = { fg = c.error },
-		NotifyWARNTitle                            = { fg = c.warning },
-		NotifyINFOTitle                            = { fg = c.info },
-		NotifyDEBUGTitle                           = { fg = c.comment },
-		NotifyTRACETitle                           = { fg = c.purple },
+		NotifyERRORTitle            = { fg = c.error },
+		NotifyWARNTitle             = { fg = c.warning },
+		NotifyINFOTitle             = { fg = c.info },
+		NotifyDEBUGTitle            = { fg = c.comment },
+		NotifyTRACETitle            = { fg = c.purple },
+
 		-- Body
-		NotifyERRORBody                            = { link = "Normal" },
-		NotifyWARNBody                             = { link = "Normal" },
-		NotifyINFOBody                             = { link = "Normal" },
-		NotifyDEBUGBody                            = { link = "Normal" },
-		NotifyTRACEBody                            = { link = "Normal" },
+		NotifyERRORBody             = { link = "Normal" },
+		NotifyWARNBody              = { link = "Normal" },
+		NotifyINFOBody              = { link = "Normal" },
+		NotifyDEBUGBody             = { link = "Normal" },
+		NotifyTRACEBody             = { link = "Normal" },
 
 		--- NvimTree
-		NvimTreeFolderIcon                         = { fg = c.blue, bg = c.none },
-		NvimTreeFolderName                         = { fg = c.fg },
-		NvimTreeGitDeleted                         = { fg = c.diff.delete },
-		NvimTreeGitDirty                           = { fg = c.diff.change },
-		NvimTreeGitNew                             = { fg = c.diff.add },
-		NvimTreeImageFile                          = { fg = c.fg_sidebar },
-		NvimTreeIndentMarker                       = { fg = c.fg_gutter },
-		NvimTreeNormal                             = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-		NvimTreeNormalNC                           = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-		NvimTreeOpenedFile                         = { bg = c.bg_highlight },
-		NvimTreeOpenedFolderName                   = { fg = c.fg, bold = true },
-		NvimTreeRootFolder                         = { fg = c.purple, italic = true },
-		NvimTreeSpecialFile                        = { fg = c.green, underline = true },
-		NvimTreeSymlink                            = { fg = c.blue },
-		NvimTreeWinSeparator                       = {
+		NvimTreeFolderIcon          = { fg = c.blue, bg = c.none },
+		NvimTreeFolderName          = { fg = c.fg },
+		NvimTreeGitDeleted          = { fg = c.diff.delete },
+		NvimTreeGitDirty            = { fg = c.diff.change },
+		NvimTreeGitNew              = { fg = c.diff.add },
+		NvimTreeImageFile           = { fg = c.fg_sidebar },
+		NvimTreeIndentMarker        = { fg = c.fg_gutter },
+		NvimTreeNormal              = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+		NvimTreeNormalNC            = { fg = c.fg_sidebar, bg = options.dim_inactive and c.bg_light or c.bg_sidebar },
+		NvimTreeOpenedFile          = { bg = c.bg_highlight },
+		NvimTreeOpenedFolderName    = { fg = c.fg, bold = true },
+		NvimTreeRootFolder          = { fg = c.purple, italic = true },
+		NvimTreeSpecialFile         = { fg = c.green, underline = true },
+		NvimTreeSymlink             = { fg = c.blue },
+		NvimTreeWinSeparator        = {
 			fg = c.border,
 			bg = c.bg_sidebar,
 		},
-		NeoTreeNormal                              = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-		NeoTreeNormalNC                            = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-		NeoTreeDimText                             = { fg = c.fg_gutter },
+		NeoTreeNormal               = { link = "NvimTreeNormal" },
+		NeoTreeNormalNC             = { link = "NvimTreeNormalNC" },
+		NeoTreeDimText              = { fg = c.fg_gutter },
 
 		--- Rainbow Delimiters
-		RainbowDelimiterRed                        = { fg = c.pink },
-		RainbowDelimiterOrange                     = { fg = c.orange },
-		RainbowDelimiterYellow                     = { fg = c.yellow },
-		RainbowDelimiterGreen                      = { fg = c.green },
-		RainbowDelimiterBlue                       = { fg = c.blue },
-		RainbowDelimiterViolet                     = { fg = c.purple },
-		RainbowDelimiterCyan                       = { fg = c.blue },
+		RainbowDelimiterRed         = { fg = c.pink },
+		RainbowDelimiterOrange      = { fg = c.orange },
+		RainbowDelimiterYellow      = { fg = c.yellow },
+		RainbowDelimiterGreen       = { fg = c.green },
+		RainbowDelimiterBlue        = { fg = c.blue },
+		RainbowDelimiterViolet      = { fg = c.purple },
+		RainbowDelimiterCyan        = { fg = c.blue_light },
 
 		--- Telescope
-		TelescopeBorder                            = { fg = c.border_highlight, bg = c.bg_float },
-		TelescopeNormal                            = { fg = c.fg, bg = c.bg_float },
-		TelescopePromptPrefix                      = { fg = c.purple },
-		TelescopeSelection                         = { fg = c.fg, bg = c.bg_visual },
-		TelescopeSelectionCaret                    = { fg = c.purple, bg = c.bg_statusline },
+		TelescopeBorder             = { fg = c.border_highlight, bg = c.bg_float },
+		TelescopeNormal             = { fg = c.fg, bg = c.bg_float },
+		TelescopePromptPrefix       = { fg = c.purple_light },
+		TelescopeSelection          = { fg = c.fg, bg = c.bg_visual },
+		TelescopeSelectionCaret     = { fg = c.blue_dark, bg = c.blue_light },
+
+		--- FIX:  This is a fix
+		--- HACK: This is a hack
+		--- NOTE: This is a note
+		--- PERF: This is a perf
+		--- TEST: This is a test
+		--- TODO: This is a todo
+		--- WARN: This is a warn
 
 		--- Todo Comments
-		TodoBgFIX                                  = { fg = c.bg_dark, bg = c.purple, bold = true },
-		TodoBgHACK                                 = { fg = c.bg_dark, bg = c.yellow, bold = true },
-		TodoBgNOTE                                 = { fg = c.bg_dark, bg = c.green, bold = true },
-		TodoBgPERF                                 = { fg = c.bg_dark, bg = c.blue, bold = true },
-		TodoBgTEST                                 = { fg = c.bg_dark, bg = c.red, bold = true },
-		TodoBgTODO                                 = { fg = c.bg_dark, bg = c.pink, bold = true },
-		TodoBgWARN                                 = { fg = c.bg_dark, bg = c.orange, bold = true },
+		TodoBgFIX                   = { fg = c.bg_dark, bg = c.purple, bold = true },
+		TodoBgHACK                  = { fg = c.bg_dark, bg = c.yellow_var1, bold = true },
+		TodoBgNOTE                  = { fg = c.bg_dark, bg = c.blue_light, bold = true },
+		TodoBgPERF                  = { fg = c.bg_dark, bg = c.green_light, bold = true },
+		TodoBgTEST                  = { fg = c.bg_dark, bg = c.purple_var2, bold = true },
+		TodoBgTODO                  = { fg = c.bg_dark, bg = c.pink_light, bold = true },
+		TodoBgWARN                  = { fg = c.bg_dark, bg = c.orange, bold = true },
 
-		TodoFgFIX                                  = { fg = c.purple },
-		TodoFgHACK                                 = { fg = c.yellow },
-		TodoFgNOTE                                 = { fg = c.green },
-		TodoFgPERF                                 = { fg = c.blue },
-		TodoFgTEST                                 = { fg = c.red },
-		TodoFgTODO                                 = { fg = c.pink },
-		TodoFgWARN                                 = { fg = c.orange },
+		TodoFgFIX                   = { fg = c.purple },
+		TodoFgHACK                  = { fg = c.yellow_var1 },
+		TodoFgNOTE                  = { fg = c.blue_light },
+		TodoFgPERF                  = { fg = c.green_light },
+		TodoFgTEST                  = { fg = c.purple_var2 },
+		TodoFgTODO                  = { fg = c.pink_light },
+		TodoFgWARN                  = { fg = c.orange },
 
-		TodoSignHACK                               = { link = "TodoFgHACK" },
-		TodoSignNOTE                               = { link = "TodoFgNOTE" },
-		TodoSignPERF                               = { link = "TodoFgPERF" },
-		TodoSignTEST                               = { link = "TodoFgTEST" },
-		TodoSignTODO                               = { link = "TodoFgTODO" },
-		TodoSignWARN                               = { link = "TodoFgWARN" },
+		TodoSignHACK                = { link = "TodoFgHACK" },
+		TodoSignNOTE                = { link = "TodoFgNOTE" },
+		TodoSignPERF                = { link = "TodoFgPERF" },
+		TodoSignTEST                = { link = "TodoFgTEST" },
+		TodoSignTODO                = { link = "TodoFgTODO" },
+		TodoSignWARN                = { link = "TodoFgWARN" },
 
 		--- WhichKey
-		WhichKey                                   = { fg = c.fg },
-		WhichKeyGroup                              = { fg = c.pink },
-		WhichKeySeparator                          = { fg = c.white, italic = false },
-		WhichKeyDesc                               = { fg = c.fg },
-		WhichKeyFloat                              = { bg = c.bg_sidebar },
-		WhichKeyBorder                             = { fg = c.fg, bg = c.bg_sidebar },
-		WhichKeyValue                              = { fg = c.white },
+		WhichKey                    = { fg = c.white_light },
+		WhichKeyGroup               = { fg = c.pink },
+		WhichKeySeparator           = { fg = c.white, italic = false },
+		WhichKeyDesc                = { fg = c.fg },
+		WhichKeyFloat               = { bg = c.bg_float },
+		WhichKeyBorder              = { fg = c.border_highlight, bg = c.bg_float },
+		WhichKeyValue               = { fg = c.white },
 
 		--- Misc
 		-- For ItemKind plugins
@@ -522,48 +548,63 @@ function M.setup(palette)
 		-- KindText                                   = { fg = c.fg },
 
 		--- Dap
-		DapUIScope                                 = { fg = c.blue },
-		DapUIType                                  = { fg = c.purple },
-		DapUIModifiedValue                         = { fg = c.blue },
-		DapUIDecoration                            = { fg = c.blue },
-		DapUIThread                                = { fg = c.green },
-		DapUIStoppedThread                         = { fg = c.pink },
-		DapUISource                                = { fg = c.purple },
-		DapUILineNumber                            = { fg = c.blue },
-		DapUIFloatBorder                           = { fg = c.border_highlight, bg = c.bg_float },
-		DapUIWatchesEmpty                          = { fg = c.pink },
-		DapUIWatchesValue                          = { fg = c.green },
-		DapUIWatchesError                          = { fg = c.error },
-		DapUIBreakpointsPath                       = { fg = c.blue },
-		DapUIBreakpointsInfo                       = { fg = c.purple },
-		DapUIBreakpointsCurrentLine                = { fg = c.green },
-		DapUIBreakpointsLine                       = { fg = c.blue },
-		DapUICurrentFrameName                      = { fg = c.green },
-		DapUIStepOver                              = { fg = c.blue },
-		DapUIStepInto                              = { fg = c.blue },
-		DapUIStepBack                              = { fg = c.blue },
-		DapUIStepOut                               = { fg = c.blue },
-		DapUIStop                                  = { fg = c.pink },
-		DapUIPlayPause                             = { fg = c.green },
-		DapUIRestart                               = { fg = c.yellow },
-		DapUIWinSelect                             = { fg = c.purple },
-		DapUIPlayPauseNC                           = { fg = c.green },
-		DapUIRestartNC                             = { fg = c.yellow },
-		DapUIStopNC                                = { fg = c.pink },
-		DapUIStepOverNC                            = { fg = c.blue },
-		DapUIStepIntoNC                            = { fg = c.blue },
-		DapUIStepBackNC                            = { fg = c.blue },
-		DapUIStepOutNC                             = { fg = c.blue },
+		DapUIScope                  = { fg = c.blue },
+		DapUIType                   = { fg = c.purple },
+		DapUIModifiedValue          = { fg = c.blue },
+		DapUIDecoration             = { fg = c.blue },
+		DapUIThread                 = { fg = c.green },
+		DapUIStoppedThread          = { fg = c.pink },
+		DapUISource                 = { fg = c.purple },
+		DapUILineNumber             = { fg = c.blue },
+		DapUIFloatBorder            = { fg = c.border_highlight, bg = c.bg_float },
+		DapUIWatchesEmpty           = { fg = c.pink },
+		DapUIWatchesValue           = { fg = c.green },
+		DapUIWatchesError           = { fg = c.error },
+		DapUIBreakpointsPath        = { fg = c.blue },
+		DapUIBreakpointsInfo        = { fg = c.purple },
+		DapUIBreakpointsCurrentLine = { fg = c.green },
+		DapUIBreakpointsLine        = { fg = c.blue },
+		DapUICurrentFrameName       = { fg = c.green },
+		DapUIStepOver               = { fg = c.blue },
+		DapUIStepInto               = { fg = c.blue },
+		DapUIStepBack               = { fg = c.blue },
+		DapUIStepOut                = { fg = c.blue },
+		DapUIStop                   = { fg = c.pink },
+		DapUIPlayPause              = { fg = c.green },
+		DapUIRestart                = { fg = c.yellow },
+		DapUIWinSelect              = { fg = c.purple },
+		DapUIPlayPauseNC            = { fg = c.green },
+		DapUIRestartNC              = { fg = c.yellow },
+		DapUIStopNC                 = { fg = c.pink },
+		DapUIStepOverNC             = { fg = c.blue },
+		DapUIStepIntoNC             = { fg = c.blue },
+		DapUIStepBackNC             = { fg = c.blue },
+		DapUIStepOutNC              = { fg = c.blue },
 
 		--- Illuminate
-		IlluminatedWordText                        = { bg = c.grey, underline = true },
-		IlluminatedWordRead                        = { bg = c.grey },
-		IlluminatedWordWrite                       = { bg = c.grey },
+		IlluminatedWordText         = { bg = c.grey_dark, underline = true },
+		IlluminatedWordRead         = { bg = c.grey_dark },
+		IlluminatedWordWrite        = { bg = c.grey_dark },
 
 		-- LighBulb
-		LightBulbSign                              = { fg = c.blue },
+		LightBulbSign               = { fg = c.blue },
 
 		--- Not Implentend Plugins --------------------------------------------
+
+		--- headlines.nvim
+		-- CodeBlock                                  = { bg = c.bg_dark },
+		-- Headline                                   = { link = "Headline1" },
+		-- Quote                                      = { fg = c.bg, bg = c.fg_gutter },
+		-- Dash                                       = { fg = c.orange, bold = true },
+		-- For Headline-i levels check the section after this table.
+
+		--- indent-blankline
+		-- IndentBlanklineChar                        = { fg = c.fg_gutter, nocombine = true },
+		-- IndentBlanklineSpaceChar                   = { fg = c.fg_dark, nocombine = true },
+		-- IndentBlanklineContextChar                 = { fg = c.blue, nocombine = true },
+		-- IblIndent                                  = { fg = c.fg_gutter, nocombine = true },
+		-- IblWhitespace                              = { fg = c.fg_dark, nocombine = true },
+		-- IblScope                                   = { fg = c.blue, nocombine = true },
 
 		--- Alpha
 		-- AlphaShortcut = { fg = c.purple },
