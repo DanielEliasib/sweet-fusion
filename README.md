@@ -1,5 +1,5 @@
 # sweet-fusion
-This is a very **WIP** neovim colorschome.
+This is a very **WIP** neovim colorscheme.
 
 ![sweet-fusion](./images/banner.png)
 
@@ -73,4 +73,4 @@ The options that are currently supported are the following:
 
 ## Notes
 
-Highligh groups, and main code structure, taken from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and [monokai-nightasty](https://github.com/polirritmico/monokai-nightasty.nvim)
+Highlight groups, and main code structure, taken from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and [monokai-nightasty](https://github.com/polirritmico/monokai-nightasty.nvim)
