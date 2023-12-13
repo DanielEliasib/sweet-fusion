@@ -34,30 +34,33 @@ end
 local function terminal(colors)
 	-- dark
 	vim.g.terminal_color_0 = colors.black
-	vim.g.terminal_color_8 = colors.blackm2
+	vim.g.terminal_color_8 = colors.black_lighter
 
 	-- light
-	vim.g.terminal_color_7 = colors.fg_dark
-	vim.g.terminal_color_15 = colors.fg
+	vim.g.terminal_color_7 = colors.grey
+	vim.g.terminal_color_15 = colors.grey_light
 
 	-- colors
 	vim.g.terminal_color_1 = colors.red
-	vim.g.terminal_color_9 = colors.red
+	vim.g.terminal_color_9 = colors.red_light
 
 	vim.g.terminal_color_2 = colors.green
-	vim.g.terminal_color_10 = colors.green
+	vim.g.terminal_color_10 = colors.green_light
 
 	vim.g.terminal_color_3 = colors.yellow
-	vim.g.terminal_color_11 = colors.yellow
+	vim.g.terminal_color_11 = colors.yellow_light
 
-	vim.g.terminal_color_4 = colors.bluem2
-	vim.g.terminal_color_12 = colors.bluem2
+	vim.g.terminal_color_4 = colors.blue
+	vim.g.terminal_color_12 = colors.blue_light
 
 	vim.g.terminal_color_5 = colors.pink
-	vim.g.terminal_color_13 = colors.pink
+	vim.g.terminal_color_13 = colors.pink_light
 
-	vim.g.terminal_color_6 = colors.blue
-	vim.g.terminal_color_14 = colors.blue
+	vim.g.terminal_color_6 = colors.purple
+	vim.g.terminal_color_14 = colors.purple_light
+
+	vim.g.terminal_color_background = colors.bg
+	vim.g.terminal_color_foreground = colors.fg
 end
 
 local function autocmds(config)

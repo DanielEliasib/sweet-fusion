@@ -3,7 +3,7 @@ local M = {}
 
 local defaults = {
 	terminal_colors = true,
-	transparency = true,
+	transparency = false,
 	hl_styles = {
 		comments = { italic = true },
 		keywords = { italic = true },
