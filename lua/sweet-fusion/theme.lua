@@ -64,7 +64,7 @@ function M.setup(palette)
 		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },      -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		-- SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
 		SignColumn                                 = { fg = c.fg_gutter },                                       -- column where |signs| are displayed
-		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                      -- column where |signs| are displayed
+		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                    -- column where |signs| are displayed
 		SpecialKey                                 = { fg = c.blue },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad                                   = { sp = c.error, undercurl = true },                         -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap                                   = { sp = c.warning, undercurl = true },                       -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -108,7 +108,7 @@ function M.setup(palette)
 		Define                                     = { fg = c.purple },                                -- preprocessor #define
 		Delimiter                                  = { fg = c.white },                                 -- character that needs attention
 		Error                                      = { fg = c.white, bg = c.red },                     -- (preferred) any erroneous construct
-		Exception                                  = { fg = c.orange },                                --  try, catch, throw
+		Exception                                  = { fg = c.orange_var2 },                           --  try, catch, throw
 		Float                                      = { fg = c.orange },                                -- a floating point constant: 2.3e10
 		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
 		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
@@ -131,7 +131,7 @@ function M.setup(palette)
 		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purple },          -- (preferred) int, long, char, etc.
+		Type                                       = { fg = c.purple_light },    -- (preferred) int, long, char, etc.
 		Typedef                                    = { fg = c.blue },            -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.black_lighter },
@@ -233,9 +233,9 @@ function M.setup(palette)
 		["@constant"]                              = { link = "Constant" },
 
 		--- Identifiers
-		["@attribute.builtin"]                     = { fg = c.blue, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-		["@variable"]                              = { link = "Identifier" },    -- Any variable name that does not have another highlight.
-		["@variable.builtin"]                      = { fg = c.purple, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@attribute.builtin"]                     = { fg = c.blue, italic = true },  -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable"]                              = { link = "Identifier" },         -- Any variable name that does not have another highlight.
+		["@variable.builtin"]                      = { fg = c.yellow_var1, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
 		["@tag"]                                   = { fg = c.pink },
@@ -312,7 +312,17 @@ function M.setup(palette)
 		-- Languages specifics
 		["@function.builtin.bash"]                 = { fg = c.purple },
 		["@constructor.lua"]                       = { fg = c.pink },
-		["@type.qualifier.c_sharp"]                = { fg = c.yellow, italic = true },
+
+		-- CS
+		["@type.qualifier.c_sharp"]                = { fg = c.purple_var2, italic = true },
+		["@lsp.type.namespace.cs"]                 = { fg = c.purple },
+		["@lsp.type.keyword.cs"]                   = {}, -- INFO: disabling this group, takes over a lot hl groups due to higher priority
+		["@storageclass.c_sharp"]                  = { link = "@keyword" },
+		["@keyword.coroutine.c_sharp"]             = { fg = c.blue_var1 },
+		["@lsp.type.class.cs"]                     = { fg = c.green_var2 },
+		["@lsp.type.struct.cs"]                    = { fg = c.green_var2 },
+		-- ["@include.c_sharp"]                       = { fg = c.orange, default = true },
+
 		dosbatchError                              = { fg = c.red },
 		["@property.ini"]                          = { fg = c.green },
 
