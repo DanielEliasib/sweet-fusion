@@ -100,29 +100,29 @@ function M.setup(palette)
 		Bold                                       = { bold = true },
 		Italic                                     = { italic = true },
 
-		Boolean                                    = { fg = c.green },                                 -- a boolean constant: TRUE, false
-		Character                                  = { fg = c.orange },                                --  a character constant: 'c', '\n'
-		Conditional                                = { fg = c.pink },                                  -- if, then, else, endif, switch, etc.
-		Constant                                   = { fg = c.orange },                                -- (preferred) any constant
-		Debug                                      = { fg = c.blue },                                  -- debugging statements
-		Define                                     = { fg = c.purple },                                -- preprocessor #define
-		Delimiter                                  = { fg = c.white },                                 -- character that needs attention
-		Error                                      = { fg = c.white, bg = c.red },                     -- (preferred) any erroneous construct
-		Exception                                  = { fg = c.orange_var2 },                           --  try, catch, throw
-		Float                                      = { fg = c.orange },                                -- a floating point constant: 2.3e10
-		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
-		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
+		Boolean                                    = { fg = c.green },                                      -- a boolean constant: TRUE, false
+		Character                                  = { fg = c.orange },                                     --  a character constant: 'c', '\n'
+		Conditional                                = { fg = c.pink },                                       -- if, then, else, endif, switch, etc.
+		Constant                                   = { fg = c.orange },                                     -- (preferred) any constant
+		Debug                                      = { fg = c.blue },                                       -- debugging statements
+		Define                                     = { fg = c.purple },                                     -- preprocessor #define
+		Delimiter                                  = { fg = c.white_white_light },                          -- character that needs attention
+		Error                                      = { fg = c.white, bg = c.red },                          -- (preferred) any erroneous construct
+		Exception                                  = { fg = c.orange_var2 },                                --  try, catch, throw
+		Float                                      = { fg = c.orange },                                     -- a floating point constant: 2.3e10
+		Function                                   = { fg = c.purple_var1, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables },    -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
-		Include                                    = { fg = c.pink },                                  -- preprocessor #include
-		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords }, -- any other keyword
-		Label                                      = { fg = c.green },                                 -- case, default, etc.
-		Macro                                      = { fg = c.orange },                                -- same as Define
-		Number                                     = { fg = c.orange },                                --   a number constant: 234, 0xff
-		Operator                                   = { fg = c.red },                                   -- "sizeof", "+", "*", etc.
-		PreCondit                                  = { fg = c.blue },                                  -- preprocessor #if, #else, #endif, etc.
-		PreProc                                    = { fg = c.blue },                                  -- (preferred) generic Preprocessor
-		Repeat                                     = { fg = c.purple },                                -- for, do, while, etc.
-		Special                                    = { fg = c.purple },                                -- (preferred) any special symbol
+		Include                                    = { fg = c.pink },                                       -- preprocessor #include
+		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords },  -- any other keyword
+		Label                                      = { fg = c.green },                                      -- case, default, etc.
+		Macro                                      = { fg = c.orange },                                     -- same as Define
+		Number                                     = { fg = c.orange },                                     --   a number constant: 234, 0xff
+		Operator                                   = { fg = c.red },                                        -- "sizeof", "+", "*", etc.
+		PreCondit                                  = { fg = c.blue },                                       -- preprocessor #if, #else, #endif, etc.
+		PreProc                                    = { fg = c.blue },                                       -- (preferred) generic Preprocessor
+		Repeat                                     = { fg = c.purple },                                     -- for, do, while, etc.
+		Special                                    = { fg = c.purple },                                     -- (preferred) any special symbol
 		-- SpecialChar = { }, --  special character in a constant
 		-- SpecialComment = { }, -- special things inside a comment
 		Statement                                  = { fg = c.orange },          -- (preferred) any statement
@@ -216,7 +216,7 @@ function M.setup(palette)
 
 		--- Functions
 		["@constructor"]                           = { fg = c.purple, italic = true },
-		["@parameter"]                             = { fg = c.white, italic = true }, -- For parameters of a function
+		["@parameter"]                             = { fg = c.white_light, italic = true }, -- For parameters of a function
 		["@function.builtin"]                      = { fg = c.green },
 		-- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
 
@@ -229,7 +229,7 @@ function M.setup(palette)
 		["@type"]                                  = { link = "Type" },
 		["@field"]                                 = { fg = c.fg },
 		["@type.builtin"]                          = { fg = c.yellow, italic = true },
-		["@property"]                              = { fg = c.fg },
+		["@property"]                              = { fg = c.fg, italic = true },
 		["@constant"]                              = { link = "Constant" },
 
 		--- Identifiers
@@ -238,9 +238,9 @@ function M.setup(palette)
 		["@variable.builtin"]                      = { fg = c.yellow_var1, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 		-- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
-		["@tag"]                                   = { fg = c.pink },
-		["@tag.attribute"]                         = { fg = c.blue, italic = true },
-		["@tag.delimiter"]                         = { fg = c.white },
+		["@tag"]                                   = { fg = c.yellow_var1 },
+		["@tag.attribute"]                         = { fg = c.blue_var1, italic = true },
+		["@tag.delimiter"]                         = { fg = c.pink_var1 },
 		["@namespace"]                             = { link = "Include" },
 
 		--- Text
@@ -267,6 +267,7 @@ function M.setup(palette)
 		["@punctuation.bracket.markdown_inline"]   = { fg = c.purple },
 
 		-- LSP Semantic Token Groups
+		["@operator"]                              = { link = "Operator" },
 		["@lsp.type.boolean"]                      = { link = "Boolean" },
 		["@lsp.type.builtinType"]                  = { link = "@type.builtin" },
 		["@lsp.type.comment"]                      = { link = "@comment" },
@@ -322,6 +323,8 @@ function M.setup(palette)
 		["@lsp.type.class.cs"]                     = { fg = c.green_var2 },
 		["@lsp.type.struct.cs"]                    = { fg = c.green_var2 },
 		-- ["@include.c_sharp"]                       = { fg = c.orange, default = true },
+		--
+		-- JS
 
 		dosbatchError                              = { fg = c.red },
 		["@property.ini"]                          = { fg = c.green },
