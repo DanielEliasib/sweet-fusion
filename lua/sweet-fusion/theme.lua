@@ -323,6 +323,13 @@ function M.setup(palette)
 		["@lsp.type.struct.cs"]                    = { fg = c.green_var2 },
 		-- ["@include.c_sharp"]                       = { fg = c.orange, default = true },
 
+		-- Vim
+		["vimFunction"]                            = { link = "Function" },
+		["vimParenSep"]                            = { link = "@punctuation.bracket" },
+		["vimOpenParen"]                           = { link = "Operator" },
+		["vimCommand"]                             = { link = "@function.builtin" },
+		["vimLet"]                                 = { link = "@keyword" },
+
 		dosbatchError                              = { fg = c.red },
 		["@property.ini"]                          = { fg = c.green },
 
