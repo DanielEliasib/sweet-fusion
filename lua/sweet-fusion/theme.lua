@@ -77,7 +77,7 @@ function M.setup(palette)
 		TabLineFill                                = { bg = c.bg_light },                                        -- tab pages line, where there are no labels
 		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, active tab page label
 		TermCursor                                 = { fg = c.bg, bg = c.fg },                                   -- cursor in a focused terminal
-		TermCursorNC                               = { fg = c.bg, bg = c.fg_dark },                              -- cursor in an unfocused terminal
+		TermCursorNC                               = { fg = c.bg, bg = c.fg },                              -- cursor in an unfocused terminal
 		Title                                      = { fg = c.fg, bold = true },                                 -- titles for output from ":set all", ":autocmd" etc.
 		VertSplit                                  = { fg = c.border },                                          -- the column separating vertically split windows
 		Visual                                     = { bg = c.bg_visual },                                       -- Visual mode selection
@@ -110,7 +110,7 @@ function M.setup(palette)
 		Error                                      = { fg = c.white, bg = c.red },                          -- (preferred) any erroneous construct
 		Exception                                  = { fg = c.orange_var2 },                                --  try, catch, throw
 		Float                                      = { fg = c.orange },                                     -- a floating point constant: 2.3e10
-		Function                                   = { fg = c.purple_var1, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
 		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables },    -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
 		Include                                    = { fg = c.pink },                                       -- preprocessor #include
@@ -127,11 +127,11 @@ function M.setup(palette)
 		-- SpecialComment = { }, -- special things inside a comment
 		Statement                                  = { fg = c.orange },          -- (preferred) any statement
 		StorageClass                               = { fg = c.yellow, italic = true }, -- static, register, volatile, etc.
-		String                                     = { fg = c.purple },          --   a string pinkant: "this is a string"
+		String                                     = { fg = c.purple_var1 },          --   a string pinkant: "this is a string"
 		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purple_light },    -- (preferred) int, long, char, etc.
+		Type                                       = { fg = c.purple_var2 },    -- (preferred) int, long, char, etc.
 		Typedef                                    = { fg = c.blue },            -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.black_lighter },
@@ -215,7 +215,7 @@ function M.setup(palette)
 		["@string.escape"]                         = { fg = c.blue }, -- For escape characters within a string.
 
 		--- Functions
-		["@constructor"]                           = { fg = c.purple, italic = true },
+		["@constructor"]                           = { fg = c.purple_light, italic = true },
 		["@parameter"]                             = { fg = c.white_light, italic = true }, -- For parameters of a function
 		["@function.builtin"]                      = { fg = c.green },
 		-- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
@@ -229,7 +229,7 @@ function M.setup(palette)
 		["@type"]                                  = { link = "Type" },
 		["@field"]                                 = { fg = c.fg },
 		["@type.builtin"]                          = { fg = c.yellow, italic = true },
-		["@property"]                              = { fg = c.fg, italic = true },
+		["@property"]                              = { fg = c.white_dark, italic = true },
 		["@constant"]                              = { link = "Constant" },
 
 		--- Identifiers
