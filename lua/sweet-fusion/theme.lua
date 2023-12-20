@@ -26,8 +26,8 @@ function M.setup(palette)
 		Cursor                                     = { fg = c.bg, bg = c.white },                      -- character under the cursor
 		CursorColumn                               = { bg = c.bg_highlight },                          -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorIM                                   = { fg = c.bg, bg = c.white },                      -- like Cursor, but used when in IME mode |CursorIM|
-		CursorLine                                 = { bg = c.bg_highlight },                          -- Screen-line at the cursor, when 'cursorline' is set.
-		CursorLineNr                               = { fg = c.red },                                   -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		CursorLine                                 = { bg = c.black_lighter },                         -- Screen-line at the cursor, when 'cursorline' is set.
+		CursorLineNr                               = { fg = c.pink },                                  -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		DiffAdd                                    = { fg = c.bg_dark, bg = c.diff.add },              -- diff mode: Added line |diff.txt|
 		DiffChange                                 = { fg = c.bg_dark, bg = c.diff.change },           -- diff mode: Changed line |diff.txt|
 		DiffDelete                                 = { fg = c.bg_dark, bg = c.diff.delete },           -- diff mode: Deleted line |diff.txt|
@@ -77,7 +77,7 @@ function M.setup(palette)
 		TabLineFill                                = { bg = c.bg_light },                                        -- tab pages line, where there are no labels
 		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, active tab page label
 		TermCursor                                 = { fg = c.bg, bg = c.fg },                                   -- cursor in a focused terminal
-		TermCursorNC                               = { fg = c.bg, bg = c.fg },                              -- cursor in an unfocused terminal
+		TermCursorNC                               = { fg = c.bg, bg = c.fg },                                   -- cursor in an unfocused terminal
 		Title                                      = { fg = c.fg, bold = true },                                 -- titles for output from ":set all", ":autocmd" etc.
 		VertSplit                                  = { fg = c.border },                                          -- the column separating vertically split windows
 		Visual                                     = { bg = c.bg_visual },                                       -- Visual mode selection
@@ -100,38 +100,38 @@ function M.setup(palette)
 		Bold                                       = { bold = true },
 		Italic                                     = { italic = true },
 
-		Boolean                                    = { fg = c.green },                                      -- a boolean constant: TRUE, false
-		Character                                  = { fg = c.orange },                                     --  a character constant: 'c', '\n'
-		Conditional                                = { fg = c.pink },                                       -- if, then, else, endif, switch, etc.
-		Constant                                   = { fg = c.orange },                                     -- (preferred) any constant
-		Debug                                      = { fg = c.blue },                                       -- debugging statements
-		Define                                     = { fg = c.purple },                                     -- preprocessor #define
-		Delimiter                                  = { fg = c.white_white_light },                          -- character that needs attention
-		Error                                      = { fg = c.white, bg = c.red },                          -- (preferred) any erroneous construct
-		Exception                                  = { fg = c.orange_var2 },                                --  try, catch, throw
-		Float                                      = { fg = c.orange },                                     -- a floating point constant: 2.3e10
+		Boolean                                    = { fg = c.green },                                 -- a boolean constant: TRUE, false
+		Character                                  = { fg = c.orange },                                --  a character constant: 'c', '\n'
+		Conditional                                = { fg = c.pink },                                  -- if, then, else, endif, switch, etc.
+		Constant                                   = { fg = c.orange },                                -- (preferred) any constant
+		Debug                                      = { fg = c.blue },                                  -- debugging statements
+		Define                                     = { fg = c.purple },                                -- preprocessor #define
+		Delimiter                                  = { fg = c.white_light },                           -- character that needs attention
+		Error                                      = { fg = c.white, bg = c.red },                     -- (preferred) any erroneous construct
+		Exception                                  = { fg = c.orange_var2 },                           --  try, catch, throw
+		Float                                      = { fg = c.orange },                                -- a floating point constant: 2.3e10
 		Function                                   = { fg = c.purple, style = options.hl_styles.functions }, -- function name (also: methods for classes)
-		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables },    -- (preferred) any variable name
+		Identifier                                 = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
 		-- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
-		Include                                    = { fg = c.pink },                                       -- preprocessor #include
-		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords },  -- any other keyword
-		Label                                      = { fg = c.green },                                      -- case, default, etc.
-		Macro                                      = { fg = c.orange },                                     -- same as Define
-		Number                                     = { fg = c.orange },                                     --   a number constant: 234, 0xff
-		Operator                                   = { fg = c.red },                                        -- "sizeof", "+", "*", etc.
-		PreCondit                                  = { fg = c.blue },                                       -- preprocessor #if, #else, #endif, etc.
-		PreProc                                    = { fg = c.blue },                                       -- (preferred) generic Preprocessor
-		Repeat                                     = { fg = c.purple },                                     -- for, do, while, etc.
-		Special                                    = { fg = c.purple },                                     -- (preferred) any special symbol
+		Include                                    = { fg = c.pink },                                  -- preprocessor #include
+		Keyword                                    = { fg = c.green, style = options.hl_styles.keywords }, -- any other keyword
+		Label                                      = { fg = c.green },                                 -- case, default, etc.
+		Macro                                      = { fg = c.orange },                                -- same as Define
+		Number                                     = { fg = c.orange },                                --   a number constant: 234, 0xff
+		Operator                                   = { fg = c.red },                                   -- "sizeof", "+", "*", etc.
+		PreCondit                                  = { fg = c.blue },                                  -- preprocessor #if, #else, #endif, etc.
+		PreProc                                    = { fg = c.blue },                                  -- (preferred) generic Preprocessor
+		Repeat                                     = { fg = c.purple },                                -- for, do, while, etc.
+		Special                                    = { fg = c.purple },                                -- (preferred) any special symbol
 		-- SpecialChar = { }, --  special character in a constant
 		-- SpecialComment = { }, -- special things inside a comment
 		Statement                                  = { fg = c.orange },          -- (preferred) any statement
 		StorageClass                               = { fg = c.yellow, italic = true }, -- static, register, volatile, etc.
-		String                                     = { fg = c.purple_var1 },          --   a string pinkant: "this is a string"
+		String                                     = { fg = c.purple_var1 },     --   a string pinkant: "this is a string"
 		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purple_var2 },    -- (preferred) int, long, char, etc.
+		Type                                       = { fg = c.purple_var2 },     -- (preferred) int, long, char, etc.
 		Typedef                                    = { fg = c.blue },            -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.black_lighter },
@@ -229,7 +229,7 @@ function M.setup(palette)
 		["@type"]                                  = { link = "Type" },
 		["@field"]                                 = { fg = c.fg },
 		["@type.builtin"]                          = { fg = c.yellow, italic = true },
-		["@property"]                              = { fg = c.white_dark, italic = true },
+		["@property"]                              = { fg = c.white_light },
 		["@constant"]                              = { link = "Constant" },
 
 		--- Identifiers
@@ -608,6 +608,11 @@ function M.setup(palette)
 		-- LighBulb
 		LightBulbSign               = { fg = c.blue },
 
+		-- modes.nvim
+		ModesCopy                   = { bg = c.yellow_var1 },
+		ModesDelete                 = { bg = c.red },
+		ModesInsert                 = { bg = c.green_var2 },
+		ModesVisual                 = { bg = c.blue_var2 },
 		--- Not Implentend Plugins --------------------------------------------
 
 		--- headlines.nvim
@@ -638,7 +643,8 @@ function M.setup(palette)
 		-- BufferCurrentHINT = { bg = c.bg, fg = c.hint },
 		-- -- BufferCurrentIcon = { bg = c.bg, fg = c.},
 		-- BufferCurrentINFO = { bg = c.bg, fg = c.info },
-		-- BufferCurrentWARN = { bg = c.bg, fg = c.warning },
+		-- BufferCurrentWARN = { bg = c.bg, fg = c.w
+		-- arning },
 		-- BufferCurrentIndex = { bg = c.bg, fg = c.info },
 		-- BufferCurrentMod = { bg = c.bg, fg = c.warning },
 		-- BufferCurrentSign = { bg = c.bg, fg = c.bg },

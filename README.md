@@ -70,7 +70,9 @@ The options that are currently supported are the following:
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb)
+- [modes.nvim](https://github.com/mvllow/modes.nvim)
 
 ## Notes
 
-Highlight groups, and main code structure, taken from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and [monokai-nightasty](https://github.com/polirritmico/monokai-nightasty.nvim)
+- Highlight groups, and main code structure, taken from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and [monokai-nightasty](https://github.com/polirritmico/monokai-nightasty.nvim)
+- For modes.nvim, if you are using Lazy, you need to load it on VimEnter or it will override the themes highlight groups.
