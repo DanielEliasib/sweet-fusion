@@ -16,14 +16,6 @@ local M = {}
 
 M.palette = {
 	--
-	-- Main 	palette
-	-- red       = "#D17078",
-	-- pink      = "#F087A3",
-	-- orange    = "#F0B7A9",
-	-- yellow    = "#F3DFA2",
-	-- green     = "#A6C9A8",
-	-- blue      = "#B5D5E3",
-	-- purple    = "#D5D5ED",
 	-- Base
 	none          = "NONE",
 	black         = "#0F0F0F",
@@ -33,10 +25,10 @@ M.palette = {
 	pink          = "#F0819F",
 	green         = "#A1C7A6",
 	purple        = "#C7C1E8",
-	yellow        = "#CCBF93",	-- *
+	yellow        = "#CCBF93",
 	blue          = "#A0C6D9",
 	grey          = "#696969",
-	-- Shade	s
+	-- Shades
 	black_darker  = "#040404",
 	black_dark    = "#080808",
 	black_light   = "#171717",
@@ -130,7 +122,8 @@ function M.setup()
 	-- Sidebar and Floats
 	colors.bg_sidebar = colors.black
 	colors.fg_sidebar = colors.white_light
-	colors.bg_float = colors.black_dark
+
+	colors.bg_float = colors.black
 	colors.fg_float = colors.white_dark
 
 	-- Set the background for the current line (current cursor position)

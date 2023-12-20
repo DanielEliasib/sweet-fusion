@@ -346,18 +346,17 @@ function M.setup(palette)
 		AerialLine                                 = { link = "LspInlayHint" },
 
 		--- Cmp
+		--- TODO: cmp uses default float colors, need to override them
 		CmpDocumentation                           = { fg = c.fg, bg = c.bg_float },
 		CmpDocumentationBorder                     = { fg = c.border_highlight, bg = c.bg_float },
-		CmpGhostText                               = { fg = c.black_light }, -- Experimental. hl must be defined by the user
+		CmpGhostText                               = { fg = c.black_light },               -- Experimental. hl must be defined by the user
 
-		-- Left side
 		CmpItemAbbr                                = { fg = c.fg, bg = c.none },           -- The suggestions
 		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },         -- The current matches with the suggestions
 		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },         -- Matches ahead current
 		CmpItemAbbrDeprecated                      = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
 
-		-- Middle
-		CmpItemMenu                                = { fg = c.comment }, -- The [source of the suggestion, LSP, luasnip...]
+		CmpItemMenu                                = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
 
 		--- Dashboard
 		-- General
@@ -511,8 +510,8 @@ function M.setup(palette)
 		RainbowDelimiterCyan        = { fg = c.blue_light },
 
 		--- Telescope
-		TelescopeBorder             = { fg = c.border_highlight, bg = c.bg_float },
-		TelescopeNormal             = { fg = c.fg, bg = c.bg_float },
+		TelescopeBorder             = { fg = c.border_highlight, bg = options.dim_inactive and c.bg or c.bg_float },
+		TelescopeNormal             = { fg = c.fg, bg = options.dim_inactive and c.bg or c.bg_float },
 		TelescopePromptPrefix       = { fg = c.purple_light },
 		TelescopeSelection          = { fg = c.fg, bg = c.bg_visual },
 		TelescopeSelectionCaret     = { fg = c.blue_dark, bg = c.blue_light },
