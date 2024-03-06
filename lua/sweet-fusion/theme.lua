@@ -131,8 +131,8 @@ function M.setup(palette)
 		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.purple_var2 },     -- (preferred) int, long, char, etc.
-		Typedef                                    = { fg = c.blue },            -- A typedef
+		Type                                       = { fg = c.pink_light },     -- (preferred) int, long, char, etc.
+		Typedef                                    = { fg = c.blue_var2 },       -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.black_lighter },
 
@@ -221,7 +221,7 @@ function M.setup(palette)
 		-- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
 
 		--- Keywords
-		["@keyword"]                               = { fg = c.blue, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
+		["@keyword"]                               = { fg = c.green_var2, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
 		["@keyword.function"]                      = { link = "Function" },
 		-- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 
@@ -323,8 +323,6 @@ function M.setup(palette)
 		["@lsp.type.class.cs"]                     = { fg = c.green_var2 },
 		["@lsp.type.struct.cs"]                    = { fg = c.green_var2 },
 		-- ["@include.c_sharp"]                       = { fg = c.orange, default = true },
-		--
-		-- JS
 
 		-- Vim
 		["vimFunction"]                            = { link = "Function" },
@@ -333,11 +331,21 @@ function M.setup(palette)
 		["vimCommand"]                             = { link = "@function.builtin" },
 		["vimLet"]                                 = { link = "@keyword" },
 
-		dosbatchError                              = { fg = c.red },
-		["@property.ini"]                          = { fg = c.green },
+		-- Dart
+		["@lsp.typemod.class.declaration.dart"]    = { link = "Structure"},
+		["@attribute.dart"]                        = { link = "@tag" },
+		["@lsp.typemod.property.annotation.dart"]  = { link = "@tag" },
+		["lsp.typemod.property.annotation.dart"]   = { fg = c.blue_var1, style = options.hl_styles.keywords },
+		["@lsp.typemod.class.constructor.dart"]    = { fg = c.purple_var2},
+		["@lsp.type.keyword.dart"]                 = {},
+		["@lsp.typemod.keyword.void.dart"]         = { link = "@keyword" },
+
+
+		dosbatchError             = { fg = c.red },
+		["@property.ini"]         = { fg = c.green },
 
 		-- Others
-		NvimInternalError                          = { fg = c.fg, bg = c.red }, -- hard red
+		NvimInternalError         = { fg = c.fg, bg = c.red }, -- hard red
 		-- ALEErrorSign = { fg = c.error },
 		-- ALEWarningSign = { fg = c.warning },
 		-- DapStoppedLine = { bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
@@ -345,48 +353,48 @@ function M.setup(palette)
 		--- Plugins -----------------------------------------------------------
 
 		--- Aerial
-		AerialNormal                               = { fg = c.fg },
-		AerialLine                                 = { link = "LspInlayHint" },
+		AerialNormal              = { fg = c.fg },
+		AerialLine                = { link = "LspInlayHint" },
 
 		--- Cmp
 		--- TODO: cmp uses default float colors, need to override them
-		CmpDocumentation                           = { fg = c.fg, bg = c.bg_float },
-		CmpDocumentationBorder                     = { fg = c.border_highlight, bg = c.bg_float },
-		CmpGhostText                               = { fg = c.black_light },               -- Experimental. hl must be defined by the user
+		CmpDocumentation          = { fg = c.fg, bg = c.bg_float },
+		CmpDocumentationBorder    = { fg = c.border_highlight, bg = c.bg_float },
+		CmpGhostText              = { fg = c.black_light },               -- Experimental. hl must be defined by the user
 
-		CmpItemAbbr                                = { fg = c.fg, bg = c.none },           -- The suggestions
-		CmpItemAbbrMatch                           = { fg = c.pink, bg = c.none },         -- The current matches with the suggestions
-		CmpItemAbbrMatchFuzzy                      = { fg = c.pink, bg = c.none },         -- Matches ahead current
-		CmpItemAbbrDeprecated                      = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
+		CmpItemAbbr               = { fg = c.fg, bg = c.none },           -- The suggestions
+		CmpItemAbbrMatch          = { fg = c.pink, bg = c.none },         -- The current matches with the suggestions
+		CmpItemAbbrMatchFuzzy     = { fg = c.pink, bg = c.none },         -- Matches ahead current
+		CmpItemAbbrDeprecated     = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
 
-		CmpItemMenu                                = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
+		CmpItemMenu               = { fg = c.comment },                   -- The [source of the suggestion, LSP, luasnip...]
 
 		--- Dashboard
 		-- General
-		DashboardHeader                            = { fg = c.purple },
-		DashboardFooter                            = { fg = c.white, italic = true },
+		DashboardHeader           = { fg = c.purple },
+		DashboardFooter           = { fg = c.white, italic = true },
 		-- Hyper theme
-		DashboardFiles                             = { fg = c.fg },
-		DashboardMruIcon                           = { fg = c.blue },
-		DashboardMruTitle                          = { fg = c.pink, bold = true },
-		DashboardProjectIcon                       = { fg = c.pink },
-		DashboardProjectTitle                      = { fg = c.pink, bold = true },
-		DashboardProjectTitleIcon                  = { fg = c.pink },
+		DashboardFiles            = { fg = c.fg },
+		DashboardMruIcon          = { fg = c.blue },
+		DashboardMruTitle         = { fg = c.pink, bold = true },
+		DashboardProjectIcon      = { fg = c.pink },
+		DashboardProjectTitle     = { fg = c.pink, bold = true },
+		DashboardProjectTitleIcon = { fg = c.pink },
 		-- DashboardShortCutIcon = { fg = c.purple },
-		DashboardShortCut                          = { fg = c.blue },
+		DashboardShortCut         = { fg = c.blue },
 		-- Doom theme
-		DashboardDesc                              = { fg = c.purple },
-		DashboardIcon                              = { fg = c.fg },
-		DashboardKey                               = { fg = c.pink },
+		DashboardDesc             = { fg = c.purple },
+		DashboardIcon             = { fg = c.fg },
+		DashboardKey              = { fg = c.pink },
 
 		--- GitSigns :h gitsigns-highlight-groups
-		GitSignsCurrentLineBlame                   = { fg = c.comment, bg = c.bg_popup, italic = true },
-		GitSignsAdd                                = { link = "diffAdded" },
-		GitSignsChange                             = { link = "diffChanged" },
-		GitSignsDelete                             = { link = "diffRemoved" },
-		GitSignsAddInline                          = { fg = c.bg, bg = c.diff.add },
-		GitSignsDeleteInline                       = { fg = c.bg, bg = c.diff.delete },
-		GitSignsChangeInline                       = { fg = c.bg, bg = c.diff.change },
+		GitSignsCurrentLineBlame  = { fg = c.comment, bg = c.bg_popup, italic = true },
+		GitSignsAdd               = { link = "diffAdded" },
+		GitSignsChange            = { link = "diffChanged" },
+		GitSignsDelete            = { link = "diffRemoved" },
+		GitSignsAddInline         = { fg = c.bg, bg = c.diff.add },
+		GitSignsDeleteInline      = { fg = c.bg, bg = c.diff.delete },
+		GitSignsChangeInline      = { fg = c.bg, bg = c.diff.change },
 		-- GitSignsChangedelete = {},
 		-- GitSignsTopdelete = {},
 		-- GitSignsUntracked = { },
@@ -410,40 +418,40 @@ function M.setup(palette)
 		-- GitSignsVirtLnum = {},
 
 		--- Lazy
-		LazyProgressDone                           = { fg = c.purple, bold = true },
-		LazyProgressTodo                           = { fg = c.pink, bold = true },
-		LazyButton                                 = { fg = c.blue, bold = true },
+		LazyProgressDone          = { fg = c.purple, bold = true },
+		LazyProgressTodo          = { fg = c.pink, bold = true },
+		LazyButton                = { fg = c.blue, bold = true },
 
 		--- Navic
-		NavicIconsFile                             = { link = "qfFileName" },
-		NavicIconsModule                           = { link = "@type.builtin" },
-		NavicIconsNamespace                        = { link = "Include" },
-		NavicIconsPackage                          = { link = "@type.builtin" },
-		NavicIconsClass                            = { link = "@type.builtin" },
-		NavicIconsMethod                           = { link = "Function" },
-		NavicIconsProperty                         = { link = "@property" },
-		NavicIconsField                            = { link = "@field" },
-		NavicIconsConstructor                      = { link = "@constructor" },
-		NavicIconsEnum                             = { link = "Structure" },
-		NavicIconsInterface                        = { link = "@type.builtin" },
-		NavicIconsFunction                         = { link = "Function" },
-		NavicIconsVariable                         = { link = "@variable" },
-		NavicIconsConstant                         = { link = "Constant" },
-		NavicIconsString                           = { link = "String" },
-		NavicIconsNumber                           = { link = "Number" },
-		NavicIconsBoolean                          = { link = "Boolean" },
-		NavicIconsArray                            = { link = "@variable" },
-		NavicIconsObject                           = { link = "@type.builtin" },
-		NavicIconsKey                              = { link = "Keyword" },
-		NavicIconsNull                             = { fg = c.red },
-		NavicIconsEnumMember                       = { link = "@lsp.type.enumMember" },
-		NavicIconsStruct                           = { link = "Structure" },
-		NavicIconsEvent                            = { link = "Function" },
-		NavicIconsOperator                         = { link = "Operator" },
-		NavicIconsTypeParameter                    = { link = "Type" },
+		NavicIconsFile            = { link = "qfFileName" },
+		NavicIconsModule          = { link = "@type.builtin" },
+		NavicIconsNamespace       = { link = "Include" },
+		NavicIconsPackage         = { link = "@type.builtin" },
+		NavicIconsClass           = { link = "@type.builtin" },
+		NavicIconsMethod          = { link = "Function" },
+		NavicIconsProperty        = { link = "@property" },
+		NavicIconsField           = { link = "@field" },
+		NavicIconsConstructor     = { link = "@constructor" },
+		NavicIconsEnum            = { link = "Structure" },
+		NavicIconsInterface       = { link = "@type.builtin" },
+		NavicIconsFunction        = { link = "Function" },
+		NavicIconsVariable        = { link = "@variable" },
+		NavicIconsConstant        = { link = "Constant" },
+		NavicIconsString          = { link = "String" },
+		NavicIconsNumber          = { link = "Number" },
+		NavicIconsBoolean         = { link = "Boolean" },
+		NavicIconsArray           = { link = "@variable" },
+		NavicIconsObject          = { link = "@type.builtin" },
+		NavicIconsKey             = { link = "Keyword" },
+		NavicIconsNull            = { fg = c.red },
+		NavicIconsEnumMember      = { link = "@lsp.type.enumMember" },
+		NavicIconsStruct          = { link = "Structure" },
+		NavicIconsEvent           = { link = "Function" },
+		NavicIconsOperator        = { link = "Operator" },
+		NavicIconsTypeParameter   = { link = "Type" },
 
-		NavicText                                  = { fg = c.fg },
-		NavicSeparator                             = { fg = c.border_highlight },
+		NavicText                 = { fg = c.fg },
+		NavicSeparator            = { fg = c.border_highlight },
 
 		-- NavBuddy
 		-- NavbuddyName                               = { fg = c.purple, bold = true },
@@ -612,7 +620,7 @@ function M.setup(palette)
 		ModesCopy                   = { bg = c.yellow_var1 },
 		ModesDelete                 = { bg = c.red },
 		ModesInsert                 = { bg = c.green_var2 },
-		ModesVisual                 = { bg = c.blue_var2 },
+		ModesVisual                 = { bg = c.purple_var1 },
 		--- Not Implentend Plugins --------------------------------------------
 
 		--- headlines.nvim
