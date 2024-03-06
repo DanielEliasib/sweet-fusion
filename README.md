@@ -74,5 +74,6 @@ The options that are currently supported are the following:
 
 ## Notes
 
+- For better experience with modes.nvim I recomend choosing a *line opacity* value of 0.25.
 - Highlight groups, and main code structure, taken from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and [monokai-nightasty](https://github.com/polirritmico/monokai-nightasty.nvim)
 - For modes.nvim, if you are using Lazy, you need to load it on VimEnter or it will override the themes highlight groups.
