@@ -42,51 +42,51 @@ function M.setup(palette)
 		RedrawDebugClear                           = { fg = c.bg_dark, bg = c.yellow },                -- debug: breakpoints
 		RedrawDebugComposed                        = { fg = c.bg_dark, bg = c.green },
 
-		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },           -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		LineNr                                     = { fg = c.fg_gutter },                                       -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		IncSearch                                  = { fg = c.fg_search, bg = c.purple, bold = true },                                                -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		LineNr                                     = { fg = c.fg_gutter },                                                                            -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		LineNrBe                                   = { fg = c.purple },
-		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },           -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg                                    = { fg = c.white, bold = true },                              -- 'showmode' message (e.g., "-- INSERT -- ")
-		MoreMsg                                    = { fg = c.pink },                                            -- |more-prompt|
-		MsgArea                                    = { fg = c.fg },                                              -- Area for messages and cmdline
-		MsgSeparator                               = { sp = c.border, underline = true },                        -- Separator for scrolled messages, `msgsep` flag of 'display'
-		NonText                                    = { fg = c.black_lighter },                                   -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Normal                                     = { fg = c.fg, bg = options.transparency and c.none or c.bg }, -- normal text
-		NormalFloat                                = { fg = c.fg_float, bg = c.bg_float },                       -- Normal text in floating windows.
-		NormalNC                                   = { fg = c.fg, bg = options.dim_inactive and c.bg_light or c.bg }, -- normal text in non-current windows
-		NormalSB                                   = { fg = c.fg_sidebar, bg = c.bg_sidebar },                   -- normal text in sidebar
-		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                             -- Popup/wildMenu: normal item.
-		PmenuSbar                                  = { bg = c.bg_menuselbar },                                   -- bg = c.grey -- Popup/WildMenu: scrollbar.
-		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                           -- Popup/WildMenu: selected item.
-		PmenuThumb                                 = { fg = c.black_light, bg = c.purple },                      -- Popup/WildMenu: Thumb of the scrollbar.
-		Question                                   = { fg = c.purple },                                          -- |hit-enter| prompt and yes/no questions
+		MatchParen                                 = { fg = c.yellow, bold = true, underline = true },                                                -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg                                    = { fg = c.white, bold = true },                                                                   -- 'showmode' message (e.g., "-- INSERT -- ")
+		MoreMsg                                    = { fg = c.pink },                                                                                 -- |more-prompt|
+		MsgArea                                    = { fg = c.fg },                                                                                   -- Area for messages and cmdline
+		MsgSeparator                               = { sp = c.border, underline = true },                                                             -- Separator for scrolled messages, `msgsep` flag of 'display'
+		NonText                                    = { fg = c.black_lighter },                                                                        -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		Normal                                     = { fg = c.fg, bg = options.transparency and c.none or c.bg },                                     -- normal text
+		NormalFloat                                = { fg = c.fg_float, bg = c.bg_float },                                                            -- Normal text in floating windows.
+		NormalNC                                   = { fg = c.fg, bg = options.dim_inactive and c.bg_light or (options.transparency and c.none or c.bg) }, -- normal text in non-current windows
+		NormalSB                                   = { fg = c.fg_sidebar, bg = c.bg_sidebar },                                                        -- normal text in sidebar
+		Pmenu                                      = { fg = c.fg, bg = c.bg_popup },                                                                  -- Popup/wildMenu: normal item.
+		PmenuSbar                                  = { bg = c.bg_menuselbar },                                                                        -- bg = c.grey -- Popup/WildMenu: scrollbar.
+		PmenuSel                                   = { fg = c.fg, bg = c.bg_menusel },                                                                -- Popup/WildMenu: selected item.
+		PmenuThumb                                 = { fg = c.black_light, bg = c.purple },                                                           -- Popup/WildMenu: Thumb of the scrollbar.
+		Question                                   = { fg = c.purple },                                                                               -- |hit-enter| prompt and yes/no questions
 		-- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },      -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search                                     = { fg = c.fg_search, bg = c.bg_search, italic = true },                                           -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		-- SignColumn                                 = { fg = c.fg_gutter, bg = options.transparency and c.none or c.bg }, -- column where |signs| are displayed
-		SignColumn                                 = { fg = c.fg_gutter },                                       -- column where |signs| are displayed
-		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                    -- column where |signs| are displayed
-		SpecialKey                                 = { fg = c.blue },                                            -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad                                   = { sp = c.error, undercurl = true },                         -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap                                   = { sp = c.warning, undercurl = true },                       -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal                                 = { sp = c.info, undercurl = true },                          -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare                                  = { sp = c.hint, undercurl = true },                          -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine                                 = { fg = c.fg_statusline, bg = c.bg_statusline },             -- status line of current window
-		StatusLineNC                               = { fg = c.bg_statusline, bg = c.fg_statusline },             -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		Substitute                                 = { fg = c.black, bg = c.green },                             -- |:substitute| replacement text highlighting
-		TabLine                                    = { fg = c.bg_statusline, bg = c.fg_statusline, underline = true }, -- tab pages line, not active tab page label
-		TabLineFill                                = { bg = c.bg_light },                                        -- tab pages line, where there are no labels
-		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, active tab page label
-		TermCursor                                 = { fg = c.bg, bg = c.fg },                                   -- cursor in a focused terminal
-		TermCursorNC                               = { fg = c.bg, bg = c.fg },                                   -- cursor in an unfocused terminal
-		Title                                      = { fg = c.fg, bold = true },                                 -- titles for output from ":set all", ":autocmd" etc.
-		VertSplit                                  = { fg = c.border },                                          -- the column separating vertically split windows
-		Visual                                     = { bg = c.bg_visual },                                       -- Visual mode selection
+		SignColumn                                 = { fg = c.fg_gutter },                                                                            -- column where |signs| are displayed
+		SignColumnSB                               = { fg = c.fg_gutter, bg = c.bg_sidebar },                                                         -- column where |signs| are displayed
+		SpecialKey                                 = { fg = c.blue },                                                                                 -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		SpellBad                                   = { sp = c.error, undercurl = true },                                                              -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap                                   = { sp = c.warning, undercurl = true },                                                            -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal                                 = { sp = c.info, undercurl = true },                                                               -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare                                  = { sp = c.hint, undercurl = true },                                                               -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		StatusLine                                 = { fg = c.fg_statusline, bg = c.bg_statusline },                                                  -- status line of current window
+		StatusLineNC                               = { fg = c.bg_statusline, bg = c.fg_statusline },                                                  -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		Substitute                                 = { fg = c.black, bg = c.green },                                                                  -- |:substitute| replacement text highlighting
+		TabLine                                    = { fg = c.bg_statusline, bg = c.fg_statusline, underline = true },                                -- tab pages line, not active tab page label
+		TabLineFill                                = { bg = c.bg_light },                                                                             -- tab pages line, where there are no labels
+		TabLineSel                                 = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true },                                -- tab pages line, active tab page label
+		TermCursor                                 = { fg = c.bg, bg = c.fg },                                                                        -- cursor in a focused terminal
+		TermCursorNC                               = { fg = c.bg, bg = c.fg },                                                                        -- cursor in an unfocused terminal
+		Title                                      = { fg = c.fg, bold = true },                                                                      -- titles for output from ":set all", ":autocmd" etc.
+		VertSplit                                  = { fg = c.border },                                                                               -- the column separating vertically split windows
+		Visual                                     = { bg = c.bg_visual },                                                                            -- Visual mode selection
 		-- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-		WarningMsg                                 = { fg = c.pink },                                            -- warning messages
-		Whitespace                                 = { fg = c.black_lighter },                                   -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		WarningMsg                                 = { fg = c.pink },                                                                                 -- warning messages
+		Whitespace                                 = { fg = c.black_lighter },                                                                        -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		-- TODO: FIX WildMenu
-		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                     -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
-		WinSeparator                               = { fg = c.border },                                          -- the column separating vertically split windows
+		WildMenu                                   = { fg = c.fg_search, bg = c.bg_search },                                                          -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
+		WinSeparator                               = { fg = c.border },                                                                               -- the column separating vertically split windows
 		-- WinBar                                     = { bg = c.pink },
 		-- WinBarNC                                   = { bg = c.blue },
 		lCursor                                    = { fg = c.bg, bg = c.pink }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -131,7 +131,7 @@ function M.setup(palette)
 		Structure                                  = { fg = c.blue },            -- struct, union, enum, etc.
 		Tag                                        = { fg = c.pink },            -- you can use CTRL-] on this
 		Todo                                       = { fg = c.bg_dark, bg = c.pink }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type                                       = { fg = c.pink_light },     -- (preferred) int, long, char, etc.
+		Type                                       = { fg = c.pink_light },      -- (preferred) int, long, char, etc.
 		Typedef                                    = { fg = c.blue_var2 },       -- A typedef
 		qfFileName                                 = { fg = c.purple },
 		qfLineNr                                   = { fg = c.black_lighter },
@@ -332,11 +332,11 @@ function M.setup(palette)
 		["vimLet"]                                 = { link = "@keyword" },
 
 		-- Dart
-		["@lsp.typemod.class.declaration.dart"]    = { link = "Structure"},
+		["@lsp.typemod.class.declaration.dart"]    = { link = "Structure" },
 		["@attribute.dart"]                        = { link = "@tag" },
 		["@lsp.typemod.property.annotation.dart"]  = { link = "@tag" },
 		["lsp.typemod.property.annotation.dart"]   = { fg = c.blue_var1, style = options.hl_styles.keywords },
-		["@lsp.typemod.class.constructor.dart"]    = { fg = c.purple_var2},
+		["@lsp.typemod.class.constructor.dart"]    = { fg = c.purple_var2 },
 		["@lsp.type.keyword.dart"]                 = {},
 		["@lsp.typemod.keyword.void.dart"]         = { link = "@keyword" },
 
@@ -371,7 +371,7 @@ function M.setup(palette)
 
 		--- Dashboard
 		-- General
-		DashboardHeader           = { fg = c.purple },
+		DashboardHeader           = { fg = c.green_var2 },
 		DashboardFooter           = { fg = c.white, italic = true },
 		-- Hyper theme
 		DashboardFiles            = { fg = c.fg },
