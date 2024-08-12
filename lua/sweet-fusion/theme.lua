@@ -204,7 +204,7 @@ function M.setup(palette)
 		--- Misc
 		-- ["@comment.documentation"] = { link = "Comment" },
 		["@preproc"]                               = { fg = c.blue, italic = true },
-		["@spell"]                                 = { fg = c.fg },
+		-- ["@spell"]                                 = { fg = c.fg },
 
 		--- Punctuation
 		["@punctuation.delimiter"]                 = { link = "Delimiter" }, -- For delimiters ie: `.`
