@@ -269,8 +269,29 @@ function M.setup(palette)
 		["@punctuation.bracket.markdown_inline"]   = { fg = c.purple },
 		["@markup.raw.markdown_inline"]            = { fg = c.white_dark, bold = true },
 		["@markup.raw.block.markdown"]             = { fg = c.white_dark, bold = true },
-		["@markup.quote.markdown"]                 = { fg = c.yellow },
-		["@markup.link.label.markdown_inline"]     = { fg = c.pink_light, italic = true },
+		["@markup.quote.markdown"]                 = { fg = c.green_var2 },
+		
+		--- 	Headings
+		["@markup.heading.1.markdown"] = { fg = c.pink_light, bold = true },
+		["@markup.heading.2.markdown"] = { fg = c.blue_var2, bold = true },
+		["@markup.heading.3.markdown"] = { fg = c.yellow_var1, bold = true },
+		["@markup.heading.4.markdown"] = { fg = c.green, bold = true },
+
+		--- 	Lists and Separators
+		["@markup.list.markdown"]          	= { fg = c.red }, -- Bullet points (-, *, +)
+		["@markup.list.checked.markdown"]  	= { fg = c.green },  -- [x]
+		["@markup.list.unchecked.markdown"]	= { fg = c.grey },   -- [ ]
+		["@punctuation.special.markdown"]  	= { fg = c.purple_var2 }, -- Horizontal rules (---)
+
+		--- 	Links and Images
+		["@markup.link.label.markdown_inline"]  = { fg = c.blue_var2, italic = true },
+		["@markup.link.url.markdown_inline"] 	= { fg = c.blue_var1, underline = true },
+		["@markup.underline.markdown_inline"] 	= { fg = c.blue, underline = true }, -- Generic underlines
+
+		--- 	Emphasis
+		["@markup.italic.markdown_inline"] = { italic = true },
+		["@markup.strong.markdown_inline"] = { bold = true },
+		["@markup.strikethrough.markdown_inline"] = { strikethrough = true },
 
 		-- LSP Semantic Token Groups
 		["@operator"]                              = { link = "Operator" },
