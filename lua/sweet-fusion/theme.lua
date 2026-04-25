@@ -183,8 +183,8 @@ function M.setup(palette)
 		DiagnosticUnderlineHint                    = { undercurl = true, sp = c.hint },                   -- Used to underline "Hint" diagnostics
 
 		-- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
-		-- LspCodeLens = { fg = c.comment },
-		-- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
+		LspCodeLens 							   = { fg = c.comment },
+		LspInlayHint 							   = { bg = c.hint, fg = c.bg_dark },
 		LspInfoBorder                              = { fg = c.border_highlight, bg = c.bg_float },
 
 		-- checkhealt
